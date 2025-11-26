@@ -183,10 +183,16 @@
         </div>
       </div>
 
-      <label for="contact_info">
-        Contact Info <span class="required">*</span><br>
-        <small class="description">Phone number or email, depending on what you picked above.</small>
-      </label>
+      <div class="two-column">
+        <div>
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input type="text" id="phone" name="Phone number" required>
+        </div>
+        <div>
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="Email address" required>
+        </div>
+      </div>
       <input type="text" id="contact_info" name="Contact info" required>
 
       <label for="address">Address to be Plowed <span class="required">*</span></label>
@@ -260,7 +266,7 @@
       <label style="margin-top:16px; font-size:0.85rem;">
         <input type="checkbox" required>
         I understand that pricing is <strong>per plow visit</strong>, and that large storms may require multiple billed visits. 
-        I also understand that submitting this form does not guarantee service.
+        I also understand that submitting this form does not guarantee service.<span class="required">*</span>
       </label>
       <button type="submit" class="btn">Submit Free Quote Request</button>
     </form>
@@ -320,6 +326,7 @@
 </script>
 </body>
 </html>
+
 
 
 
