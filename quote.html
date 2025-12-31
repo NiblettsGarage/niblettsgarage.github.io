@@ -13,6 +13,7 @@
     input[type="text"],
     input[type="email"],
     input[type="tel"],
+    input[type="number"],
     select,
     textarea {
       width: 100%;
@@ -35,14 +36,6 @@
       color: #fff;
       padding: 20px 15px;
       text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      letter-spacing: 1px;
-    }
-    header p {
-      margin: 5px 0 0 0;
-      font-size: 0.95rem;
     }
     .container {
       max-width: 900px;
@@ -68,20 +61,8 @@
       font-weight: 600;
       font-size: 0.9rem;
     }
-    input[type="text"],
-    input[type="email"],
-    select,
     textarea {
-      width: 100%;
-      padding: 9px 10px;
-      margin-top: 4px;
-      border-radius: 4px;
-      border: 1px solid #cfd4dd;
-      font-size: 0.95rem;
-      box-sizing: border-box;
-    }
-    textarea {
-      min-height: 100px;
+      min-height: 110px;
       resize: vertical;
     }
     .required {
@@ -116,22 +97,6 @@
       color: #555;
       padding: 15px;
     }
-    .badge-free {
-      display: inline-block;
-      background: #27ae60;
-      color: #fff;
-      padding: 3px 8px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-left: 6px;
-      text-transform: uppercase;
-    }
-    small.description {
-      font-size: 0.8rem;
-      color: #666;
-      font-weight: 400;
-    }
     .msg {
       margin-bottom: 15px;
       padding: 10px 12px;
@@ -144,19 +109,36 @@
       border: 1px solid #27ae60;
       color: #1a7c42;
     }
+    small.description {
+      font-size: 0.8rem;
+      color: #666;
+      font-weight: 400;
+      display: block;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
     img {
       width: 100%;
       max-width: 25rem;
       height: auto;
     }
-    
-    .logo {
-      display: block;
-      margin: auto;
-      width: 100%;
-      max-width: 20rem;
+    nav {
+      background: #001932;
+      padding: 8px 15px;
+      text-align: center;
     }
-
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: inline-block;
+      padding: 6px 0;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -164,11 +146,16 @@
   <a href="index.html">
     <img src="nibletts-garage-high-resolution-logo-transparent.png" alt="Niblett's Garage main logo">
   </a>
-
-  <a href="index.html">
-    <img src="Logo.png" class="logo" alt="Niblett's Garage snow plowing logo">
-  </a>
 </header>
+
+<nav>
+  <a href="index.html">Mechanic Services</a>
+  <a href="mechanic.html">Mechanic Quote</a>
+  <a href="plowing.html">Snow Plowing</a>
+  <a href="quote.html">Plowing Quote</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
 
 <div class="container">
   <div class="card">
@@ -364,6 +351,7 @@
 </script>
 </body>
 </html>
+
 
 
 
