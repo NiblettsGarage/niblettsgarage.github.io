@@ -7,12 +7,24 @@
 
   <meta name="google-site-verification" content="40HXTKwrisCKyf-YB7BtlwI1-2Vf_zXs2--BwtVV4Jo" />
   <meta charset="UTF-8">
-  <meta name="description" content="Automotive repair and maintenance serving Chippewa County, Wisconsin. Straightforward service, clear pricing, quality parts, and professional workmanship.">
-  <meta name="keywords" content="auto repair, mechanic, brakes, oil change, diagnostics, suspension, wheel bearings, Chippewa Falls, Eau Claire, Chippewa County">
-  <title>Niblett's Garage</title>
+  <title>Niblett's Garage - Mechanic Quote</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <style>
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 9px 10px;
+      margin-top: 4px;
+      border-radius: 4px;
+      border: 1px solid #cfd4dd;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #f3f6fb;
@@ -22,312 +34,296 @@
     header {
       background: #002b5b;
       color: #fff;
-      padding: 14px 15px 18px;
+      padding: 20px 15px;
       text-align: center;
     }
-    img {
-      width: 100%;
-      max-width: 25rem;
-      height: auto;
-    }
-    .brandmark {
-      display: block;
-      margin: 0 auto;
-      max-width: 23rem;
-    }
-
-    nav {
-      background: #001932;
-      padding: 10px 15px;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 12px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      display: inline-block;
-      padding: 6px 0;
-      opacity: 0.95;
-    }
-    nav a:hover {
-      text-decoration: underline;
-      opacity: 1;
-    }
-
     .container {
       max-width: 900px;
-      margin: 26px auto;
-      padding: 0 15px 34px;
+      margin: 25px auto;
+      padding: 0 15px 30px;
     }
     .card {
       background: #ffffff;
-      border-radius: 10px;
-      padding: 22px 22px 26px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+      border-radius: 8px;
+      padding: 20px 20px 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
       margin-bottom: 20px;
     }
-    h1, h2, h3 {
+    h2 {
       margin-top: 0;
     }
-    .hero {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      flex-wrap: wrap;
+    form {
+      margin-top: 10px;
     }
-    .hero-left {
-      flex: 1 1 520px;
-      min-width: 260px;
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
     }
-    .hero-right {
-      flex: 1 1 260px;
-      min-width: 240px;
-      background: #f7f9ff;
-      border: 1px solid #e6ebf7;
-      border-radius: 10px;
-      padding: 14px 14px 16px;
+    textarea {
+      min-height: 110px;
+      resize: vertical;
     }
-    .hero-title {
-      font-size: 2rem;
-      margin-bottom: 8px;
-      letter-spacing: 0.2px;
-    }
-    .hero-sub {
-      font-size: 1rem;
-      color: #3d4655;
-      line-height: 1.55;
-      margin: 0 0 14px 0;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0 2px 0;
-    }
-    .pill {
-      display: inline-block;
-      background: #eef4ff;
-      border: 1px solid #d7e5ff;
-      color: #1f3a6b;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
+    .required {
+      color: #c0392b;
     }
     .btn {
       display: inline-block;
-      padding: 11px 18px;
-      border-radius: 6px;
+      margin-top: 18px;
+      padding: 10px 18px;
+      border-radius: 4px;
       border: none;
       background: #0072ff;
       color: #fff;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 0.95rem;
       cursor: pointer;
-      text-decoration: none;
     }
     .btn:hover {
       background: #0059c4;
     }
-    .btn-secondary {
-      background: #e9eef9;
-      color: #12305f;
-      border: 1px solid #d7def0;
-    }
-    .btn-secondary:hover {
-      background: #dde6fb;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin: 10px 0 0 0;
-    }
-    li {
-      margin: 6px 0;
-      line-height: 1.45;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-    @media (max-width: 720px) {
-      .grid-2 { grid-template-columns: 1fr; }
-    }
-
-    .kicker {
-      color: #2c3e50;
-      font-weight: 800;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 6px;
-    }
-    .muted {
-      color: #4b5563;
-      line-height: 1.5;
-      margin: 0;
-    }
-
-    .info-line {
+    .two-column {
       display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 10px;
-      border-bottom: 1px solid #e6ebf7;
-      font-size: 0.92rem;
+      gap: 15px;
+      flex-wrap: wrap;
     }
-    .info-line:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
+    .two-column > div {
+      flex: 1 1 220px;
     }
-    .info-key {
-      color: #334155;
-      font-weight: 700;
-    }
-    .info-val {
-      color: #111827;
-      font-weight: 600;
-      text-align: right;
-    }
-
-    .disclaimer {
-      font-size: 0.85rem;
-      color: #555;
-      line-height: 1.55;
-    }
-
     footer {
       text-align: center;
       font-size: 0.8rem;
       color: #555;
       padding: 15px;
     }
+    .msg {
+      margin-bottom: 15px;
+      padding: 10px 12px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .msg-success {
+      background: #e5f9e7;
+      border: 1px solid #27ae60;
+      color: #1a7c42;
+    }
+    small.description {
+      font-size: 0.8rem;
+      color: #666;
+      font-weight: 400;
+      display: block;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+    img {
+      width: 100%;
+      max-width: 25rem;
+      height: auto;
+    }
+    nav {
+      background: #001932;
+      padding: 8px 15px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: inline-block;
+      padding: 6px 0;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
-
 <body>
 <header>
   <a href="index.html">
-    <img class="brandmark" src="nibletts-garage-high-resolution-logo-transparent.png" alt="Niblett's Garage main logo">
+    <img src="nibletts-garage-high-resolution-logo-transparent.png" alt="Niblett's Garage main logo">
   </a>
 </header>
 
 <nav>
   <a href="index.html">Mechanic Services</a>
-  <a href="mechanic-quote.html">Request a Quote</a>
+  <a href="mechanic-quote.html">Mechanic Quote</a>
   <a href="plowing.html">Snow Plowing</a>
   <a href="quote.html">Plowing Quote</a>
 </nav>
 
 <div class="container">
-
   <div class="card">
-    <div class="hero">
-      <div class="hero-left">
-        <div class="kicker">Automotive Repair & Maintenance</div>
-        <h1 class="hero-title">Professional Service You Can Trust</h1>
-        <p class="hero-sub">
-          Serving Chippewa County, Wisconsin with straightforward diagnostics, quality parts, and clear communication.
-          We provide realistic options and upfront expectations before any work begins.
-        </p>
+    <h2>Request a Mechanic Quote</h2>
+    <p>Fill this out and we’ll contact you with pricing and scheduling options.</p>
 
-        <div class="pill-row">
-          <span class="pill">Clear estimates</span>
-          <span class="pill">Quality workmanship</span>
-          <span class="pill">Honest recommendations</span>
-          <span class="pill">Local & responsive</span>
-        </div>
-
-        <div class="btn-row">
-          <a class="btn" href="mechanic-quote.html">Request a Mechanic Quote</a>
-          <a class="btn btn-secondary" href="plowing.html">Snow Plowing Services</a>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <h3 style="margin:0 0 10px 0;">Service Details</h3>
-        <div class="info-line">
-          <span class="info-key">Area</span>
-          <span class="info-val">Chippewa County, WI</span>
-        </div>
-        <div class="info-line">
-          <span class="info-key">Appointments</span>
-          <span class="info-val">Scheduled</span>
-        </div>
-        <div class="info-line">
-          <span class="info-key">Estimates</span>
-          <span class="info-val">After review</span>
-        </div>
-        <div class="info-line">
-          <span class="info-key">Diagnostics</span>
-          <span class="info-val">Case-by-case</span>
-        </div>
-        <p class="disclaimer" style="margin-top:10px;">
-          For fastest scheduling, submit the quote form with year/make/model and a clear description of symptoms.
-        </p>
-      </div>
+    <div id="successMessage" class="msg msg-success">
+      Thank you – your request has been sent. We’ll contact you as soon as possible.
     </div>
-  </div>
 
-  <div class="card">
-    <h2>Services</h2>
-    <div class="grid-2">
-      <div>
-        <h3 style="margin-bottom:6px;">Maintenance</h3>
-        <ul>
-          <li>Oil changes and fluid services</li>
-          <li>Brakes inspection and replacement</li>
-          <li>Basic preventative maintenance</li>
-          <li>Pre-trip / pre-purchase inspections</li>
-        </ul>
+    <form id="quoteForm"
+          action="https://formspree.io/f/xovzbrqv"
+          method="POST">
+      <!-- Change the subject so emails are easy to filter -->
+      <input type="hidden" name="_subject" value="New Mechanic Quote Request">
+
+      <!-- Customer Info -->
+      <h3 style="margin-bottom:6px;">Customer Info</h3>
+
+      <div class="two-column">
+        <div>
+          <label for="name">Name <span class="required">*</span></label>
+          <input type="text" id="name" name="Name" required>
+        </div>
+        <div>
+          <label for="contact_method">Preferred Contact Method <span class="required">*</span></label>
+          <select id="contact_method" name="Preferred contact method" required>
+            <option value="">-- Select --</option>
+            <option value="Phone call">Phone call</option>
+            <option value="Text message">Text message</option>
+            <option value="Email">Email</option>
+          </select>
+        </div>
       </div>
-      <div>
-        <h3 style="margin-bottom:6px;">Repair & Diagnostics</h3>
-        <ul>
-          <li>No-start / battery / charging issues</li>
-          <li>Suspension and steering components</li>
-          <li>Wheel bearings / hubs</li>
-          <li>Noise / vibration diagnosis and repair planning</li>
-        </ul>
+
+      <div class="two-column">
+        <div>
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input
+            type="tel"
+            id="phone"
+            name="Phone number"
+            required
+            pattern="^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$"
+            placeholder="555-123-4567"
+            title="Enter a valid 10-digit phone number"
+          >
+        </div>
+
+        <div>
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="Email address"
+            required
+            placeholder="name@example.com"
+          >
+        </div>
       </div>
+
+      <small class="description">
+        Both a valid phone number and email are required. Quotes/confirmations are sent by email.
+      </small>
+
+      <!-- Vehicle Info -->
+      <h3 style="margin-top:20px; margin-bottom:6px;">Vehicle Info</h3>
+
+      <div class="two-column">
+        <div>
+          <label for="year">Year <span class="required">*</span></label>
+          <input type="number" id="year" name="Vehicle year" required min="1900" max="2099" placeholder="2016">
+        </div>
+        <div>
+          <label for="make">Make <span class="required">*</span></label>
+          <input type="text" id="make" name="Vehicle make" required placeholder="Chevrolet">
+        </div>
+        <div>
+          <label for="model">Model <span class="required">*</span></label>
+          <input type="text" id="model" name="Vehicle model" required placeholder="Silverado 1500">
+        </div>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <label for="trim">Trim / Engine (optional)</label>
+          <input type="text" id="trim" name="Trim / Engine" placeholder="High Country 6.2L / 5.3L / etc.">
+        </div>
+        <div>
+          <label for="mileage">Mileage (optional)</label>
+          <input type="number" id="mileage" name="Mileage" min="0" placeholder="145000">
+        </div>
+      </div>
+
+      <!-- Service Requested -->
+      <h3 style="margin-top:20px; margin-bottom:6px;">Service Requested</h3>
+
+      <label for="service">What do you want done? <span class="required">*</span></label>
+      <select id="service" name="Service requested" required>
+        <option value="">-- Select --</option>
+        <option value="Brakes (pads/rotors/calipers)">Brakes (pads/rotors/calipers)</option>
+        <option value="Oil change / maintenance">Oil change / maintenance</option>
+        <option value="Suspension / steering">Suspension / steering</option>
+        <option value="Wheel bearing / hub">Wheel bearing / hub</option>
+        <option value="Battery / no-start / charging">Battery / no-start / charging</option>
+        <option value="Check engine light / diagnostics">Check engine light / diagnostics</option>
+        <option value="Other (describe below)">Other (describe below)</option>
+      </select>
+
+      <label for="details">
+        Describe the issue / symptoms <span class="required">*</span><br>
+        <small class="description">
+          Include noises, where it’s coming from, when it happens, and any recent repairs/parts replaced.
+        </small>
+      </label>
+      <textarea id="details" name="Issue details" required placeholder="Example: Grinding noise front left when braking. Vibration at highway speed. Started last week..."></textarea>
+
+      <div class="two-column">
+        <div>
+          <label for="location">Service Location <span class="required">*</span></label>
+          <select id="location" name="Service location" required>
+            <option value="">-- Select --</option>
+            <option value="Bring vehicle to shop">Bring vehicle to shop</option>
+            <option value="Mobile service (if available)">Mobile service (if available)</option>
+            <option value="Not sure / discuss options">Not sure / discuss options</option>
+          </select>
+        </div>
+        <div>
+          <label for="urgency">Urgency <span class="required">*</span></label>
+          <select id="urgency" name="Urgency" required>
+            <option value="">-- Select --</option>
+            <option value="ASAP - vehicle not safe / not drivable">ASAP - vehicle not safe / not drivable</option>
+            <option value="Within a week">Within a week</option>
+            <option value="Flexible / whenever">Flexible / whenever</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="address">
+        Address / general area (optional)<br>
+        <small class="description">If you’re requesting mobile service, include where the vehicle is located.</small>
+      </label>
+      <input type="text" id="address" name="Vehicle location address" placeholder="Chippewa Falls / Eau Claire area">
+
+      <label style="margin-top:16px; font-size:0.85rem;">
+        <input type="checkbox" required>
+        I understand this request does not guarantee service. Pricing and scheduling depend on inspection, parts availability,
+        and workload. Additional work will not be performed without approval.<span class="required">*</span>
+      </label>
+
+      <button type="submit" class="btn">Submit Quote Request</button>
+    </form>
+
+    <div class="card" style="font-size:0.85rem; color:#555; margin-top:18px;">
+      <h3>Disclaimer</h3>
+      <p>
+        Submitting this form does <strong>not</strong> create a service agreement or guarantee repair work.
+        Estimates depend on inspection and parts availability. Diagnostic time may be billed depending on the issue and complexity.
+        We will not proceed with additional work beyond the approved scope without contacting you first.
+      </p>
     </div>
-    <p class="muted" style="margin-top:12px;">
-      Not seeing your issue listed? Submit the quote request and describe the problem — we’ll confirm what we can take on.
-    </p>
   </div>
 
   <div class="card">
     <h2>How It Works</h2>
-    <ol style="margin: 8px 0 0 18px; line-height: 1.55;">
-      <li><strong>Submit a request:</strong> Provide your contact info and vehicle details.</li>
-      <li><strong>Quick review:</strong> We look over symptoms and ask follow-up questions if needed.</li>
-      <li><strong>Quote + scheduling:</strong> You get clear options and next steps.</li>
-      <li><strong>Work begins after approval:</strong> No surprise add-ons without your go-ahead.</li>
-    </ol>
+    <p><strong>1.</strong> You submit this form with your contact + vehicle info.</p>
+    <p><strong>2.</strong> We review symptoms and ask any quick follow-up questions if needed.</p>
+    <p><strong>3.</strong> We contact you with pricing expectations and scheduling options.</p>
+    <p><strong>4.</strong> Once approved, we schedule the job and keep you updated.</p>
   </div>
-
-  <div class="card" style="font-size:0.85rem; color:#555;">
-    <h3>Disclaimer</h3>
-    <p style="margin:0; line-height:1.55;">
-      Submitting a request does not create a service agreement or guarantee repair work. Pricing and scheduling depend on
-      inspection, parts availability, and workload. Diagnostic time may be billed depending on the issue and complexity.
-      We will not proceed with additional work beyond the approved scope without contacting you first.
-    </p>
-  </div>
-
 </div>
 
 <footer>
@@ -335,7 +331,30 @@
 </footer>
 
 <script>
+  // Set year
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Show success message without Formspree redirect
+  const form = document.getElementById('quoteForm');
+  const success = document.getElementById('successMessage');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      form.reset();
+      success.style.display = 'block';
+    } else {
+      alert('There was a problem submitting the form. Please try again later.');
+    }
+  });
 </script>
 </body>
 </html>
