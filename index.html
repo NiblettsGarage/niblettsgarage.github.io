@@ -7,10 +7,11 @@
 
   <meta name="google-site-verification" content="40HXTKwrisCKyf-YB7BtlwI1-2Vf_zXs2--BwtVV4Jo" />
   <meta charset="UTF-8">
-  <meta name="description" content="Mobile and shop-based automotive repair and maintenance in Chippewa County, Wisconsin. Honest work, clear communication, and quality parts.">
-  <meta name="keywords" content="auto repair, mechanic, brake repair, oil change, diagnostics, suspension, wheel bearings, Chippewa Falls, Eau Claire">
+  <meta name="description" content="Automotive repair and maintenance serving Chippewa County, Wisconsin. Straightforward service, clear pricing, quality parts, and professional workmanship.">
+  <meta name="keywords" content="auto repair, mechanic, brakes, oil change, diagnostics, suspension, wheel bearings, Chippewa Falls, Eau Claire, Chippewa County">
   <title>Niblett's Garage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -21,66 +22,117 @@
     header {
       background: #002b5b;
       color: #fff;
-      padding: 10px 15px 20px;
+      padding: 14px 15px 18px;
       text-align: center;
     }
     img {
-      height: auto;
+      width: 100%;
       max-width: 25rem;
+      height: auto;
     }
-    .logo {
+    .brandmark {
       display: block;
-      margin: auto;
+      margin: 0 auto;
+      max-width: 23rem;
     }
+
     nav {
       background: #001932;
-      padding: 8px 15px;
+      padding: 10px 15px;
       text-align: center;
     }
     nav a {
       color: #fff;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 12px;
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 600;
       display: inline-block;
       padding: 6px 0;
+      opacity: 0.95;
     }
     nav a:hover {
       text-decoration: underline;
+      opacity: 1;
     }
+
     .container {
       max-width: 900px;
-      margin: 25px auto;
-      padding: 0 15px 30px;
+      margin: 26px auto;
+      padding: 0 15px 34px;
     }
     .card {
       background: #ffffff;
-      border-radius: 8px;
-      padding: 20px 20px 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      border-radius: 10px;
+      padding: 22px 22px 26px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.07);
       margin-bottom: 20px;
     }
-    h1, h2 {
+    h1, h2, h3 {
       margin-top: 0;
     }
+    .hero {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .hero-left {
+      flex: 1 1 520px;
+      min-width: 260px;
+    }
+    .hero-right {
+      flex: 1 1 260px;
+      min-width: 240px;
+      background: #f7f9ff;
+      border: 1px solid #e6ebf7;
+      border-radius: 10px;
+      padding: 14px 14px 16px;
+    }
     .hero-title {
-      font-size: 1.9rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
+      margin-bottom: 8px;
+      letter-spacing: 0.2px;
     }
     .hero-sub {
       font-size: 1rem;
-      color: #444;
+      color: #3d4655;
+      line-height: 1.55;
+      margin: 0 0 14px 0;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 2px 0;
+    }
+    .pill {
+      display: inline-block;
+      background: #eef4ff;
+      border: 1px solid #d7e5ff;
+      color: #1f3a6b;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
     }
     .btn {
       display: inline-block;
-      margin-top: 18px;
-      padding: 10px 18px;
-      border-radius: 4px;
+      padding: 11px 18px;
+      border-radius: 6px;
       border: none;
       background: #0072ff;
       color: #fff;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.95rem;
       cursor: pointer;
       text-decoration: none;
@@ -88,100 +140,194 @@
     .btn:hover {
       background: #0059c4;
     }
+    .btn-secondary {
+      background: #e9eef9;
+      color: #12305f;
+      border: 1px solid #d7def0;
+    }
+    .btn-secondary:hover {
+      background: #dde6fb;
+    }
+
     ul {
       padding-left: 20px;
+      margin: 10px 0 0 0;
     }
+    li {
+      margin: 6px 0;
+      line-height: 1.45;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    @media (max-width: 720px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .kicker {
+      color: #2c3e50;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+    }
+    .muted {
+      color: #4b5563;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .info-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 10px;
+      border-bottom: 1px solid #e6ebf7;
+      font-size: 0.92rem;
+    }
+    .info-line:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .info-key {
+      color: #334155;
+      font-weight: 700;
+    }
+    .info-val {
+      color: #111827;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .disclaimer {
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.55;
+    }
+
     footer {
       text-align: center;
       font-size: 0.8rem;
       color: #555;
       padding: 15px;
     }
-    img {
-      width: 100%;
-      max-width: 25rem;
-      height: auto;
-    }
-    .logo {
-      display: block;
-      margin: auto;
-      width: 100%;
-      max-width: 20rem;
-    }
-    .note {
-      font-size: 0.9rem;
-      color: #555;
-      margin-top: 10px;
-      line-height: 1.45;
-    }
   </style>
 </head>
+
 <body>
 <header>
   <a href="index.html">
-    <img src="nibletts-garage-high-resolution-logo-transparent.png" alt="Niblett's Garage main logo">
+    <img class="brandmark" src="nibletts-garage-high-resolution-logo-transparent.png" alt="Niblett's Garage main logo">
   </a>
 </header>
 
 <nav>
   <a href="index.html">Mechanic Services</a>
+  <a href="mechanic-quote.html">Request a Quote</a>
   <a href="plowing.html">Snow Plowing</a>
   <a href="quote.html">Plowing Quote</a>
 </nav>
 
 <div class="container">
+
   <div class="card">
-    <h1 class="hero-title">Honest Auto Repair & Maintenance</h1>
-    <p class="hero-sub">
-      Practical repairs, clear communication, and no BS — serving Chippewa County, Wisconsin.
-    </p>
-    <p>
-      Whether your vehicle needs basic maintenance, a weird noise tracked down, or a repair done right the first time,
-      we’ll tell you what’s wrong, what it takes to fix it, and what it’s going to cost before we turn a wrench.
-    </p>
+    <div class="hero">
+      <div class="hero-left">
+        <div class="kicker">Automotive Repair & Maintenance</div>
+        <h1 class="hero-title">Professional Service You Can Trust</h1>
+        <p class="hero-sub">
+          Serving Chippewa County, Wisconsin with straightforward diagnostics, quality parts, and clear communication.
+          We provide realistic options and upfront expectations before any work begins.
+        </p>
 
-    <!-- If you create a mechanic quote/contact page later, change this href -->
-    <a class="btn" href="mailto:YOUR_EMAIL_HERE?subject=Mechanic%20Service%20Request">Request Service</a>
+        <div class="pill-row">
+          <span class="pill">Clear estimates</span>
+          <span class="pill">Quality workmanship</span>
+          <span class="pill">Honest recommendations</span>
+          <span class="pill">Local & responsive</span>
+        </div>
 
-    <p class="note">
-      Tip: If you want this to be a real form like your plowing quote, tell me what fields you want and your Formspree link,
-      and I’ll build a <strong>mechanic-quote.html</strong> that matches your exact styling.
-    </p>
+        <div class="btn-row">
+          <a class="btn" href="mechanic-quote.html">Request a Mechanic Quote</a>
+          <a class="btn btn-secondary" href="plowing.html">Snow Plowing Services</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <h3 style="margin:0 0 10px 0;">Service Details</h3>
+        <div class="info-line">
+          <span class="info-key">Area</span>
+          <span class="info-val">Chippewa County, WI</span>
+        </div>
+        <div class="info-line">
+          <span class="info-key">Appointments</span>
+          <span class="info-val">Scheduled</span>
+        </div>
+        <div class="info-line">
+          <span class="info-key">Estimates</span>
+          <span class="info-val">After review</span>
+        </div>
+        <div class="info-line">
+          <span class="info-key">Diagnostics</span>
+          <span class="info-val">Case-by-case</span>
+        </div>
+        <p class="disclaimer" style="margin-top:10px;">
+          For fastest scheduling, submit the quote form with year/make/model and a clear description of symptoms.
+        </p>
+      </div>
+    </div>
   </div>
 
   <div class="card">
-    <h2>Common Jobs We Handle</h2>
-    <ul>
-      <li>Brakes (pads/rotors/calipers), brake noise and vibration issues</li>
-      <li>Oil changes and fluid services (coolant, brake fluid, diff, transfer case)</li>
-      <li>Suspension and steering (tie rods, ball joints, control arms, sway links)</li>
-      <li>Wheel bearings / hubs and driveline noise diagnosis</li>
-      <li>Battery/starting/charging issues (no-start, alternator testing)</li>
-      <li>Basic diagnostics for lights, sensors, leaks, and odd sounds</li>
-      <li>General maintenance and pre-trip / pre-purchase inspections</li>
-    </ul>
+    <h2>Services</h2>
+    <div class="grid-2">
+      <div>
+        <h3 style="margin-bottom:6px;">Maintenance</h3>
+        <ul>
+          <li>Oil changes and fluid services</li>
+          <li>Brakes inspection and replacement</li>
+          <li>Basic preventative maintenance</li>
+          <li>Pre-trip / pre-purchase inspections</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom:6px;">Repair & Diagnostics</h3>
+        <ul>
+          <li>No-start / battery / charging issues</li>
+          <li>Suspension and steering components</li>
+          <li>Wheel bearings / hubs</li>
+          <li>Noise / vibration diagnosis and repair planning</li>
+        </ul>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:12px;">
+      Not seeing your issue listed? Submit the quote request and describe the problem — we’ll confirm what we can take on.
+    </p>
   </div>
 
   <div class="card">
     <h2>How It Works</h2>
-    <ol>
-      <li>You reach out with the vehicle info and what it’s doing (year/make/model + symptoms).</li>
-      <li>We ask a few quick questions and schedule a time to look at it.</li>
-      <li>You get a straight answer: what’s wrong, what’s optional, and what’s urgent.</li>
-      <li>Once approved, we complete the work and keep you updated.</li>
+    <ol style="margin: 8px 0 0 18px; line-height: 1.55;">
+      <li><strong>Submit a request:</strong> Provide your contact info and vehicle details.</li>
+      <li><strong>Quick review:</strong> We look over symptoms and ask follow-up questions if needed.</li>
+      <li><strong>Quote + scheduling:</strong> You get clear options and next steps.</li>
+      <li><strong>Work begins after approval:</strong> No surprise add-ons without your go-ahead.</li>
     </ol>
-    <p class="note">
-      Please include: vehicle year/make/model, symptoms, and any recent work done. If you have photos/videos, even better.
-    </p>
   </div>
 
   <div class="card" style="font-size:0.85rem; color:#555;">
     <h3>Disclaimer</h3>
-    <p>
-      Estimates depend on inspection and parts availability. We will not proceed with additional work beyond the agreed scope
-      without contacting you first. Some diagnostic time may be billed depending on the issue and complexity.
+    <p style="margin:0; line-height:1.55;">
+      Submitting a request does not create a service agreement or guarantee repair work. Pricing and scheduling depend on
+      inspection, parts availability, and workload. Diagnostic time may be billed depending on the issue and complexity.
+      We will not proceed with additional work beyond the approved scope without contacting you first.
     </p>
   </div>
+
 </div>
 
 <footer>
