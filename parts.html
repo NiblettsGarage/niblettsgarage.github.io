@@ -11,7 +11,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    /* 1:1 MATCH OF YOUR INDEX STYLING */
     body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f3f6fb; margin: 0; padding: 0; }
     header { background: #002b5b; color: #fff; padding: 14px 15px 18px; text-align: center; }
     img { width: 100%; max-width: 25rem; height: auto; }
@@ -20,46 +19,52 @@
     nav a { color: #fff; text-decoration: none; margin: 0 12px; font-size: 0.95rem; font-weight: 600; display: inline-block; padding: 6px 0; opacity: 0.95; }
     nav a:hover { text-decoration: underline; opacity: 1; }
     .container { max-width: 900px; margin: 26px auto; padding: 0 15px 34px; }
-    .card { background: #ffffff; border-radius: 10px; padding: 22px 22px 26px; box-shadow: 0 6px 18px rgba(0,0,0,0.07); margin-bottom: 20px; }
+    .card { background: #ffffff; border-radius: 10px; padding: 22px 22px 26px; box-shadow: 0 6px 18px rgba(0,0,0,0.07); margin-bottom: 20px; box-sizing: border-box; }
     h1, h2, h3 { margin-top: 0; }
+    
     .hero { display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap; }
     .hero-left { flex: 1 1 520px; min-width: 260px; }
     .hero-right { flex: 1 1 260px; min-width: 240px; background: #f7f9ff; border: 1px solid #e6ebf7; border-radius: 10px; padding: 14px 14px 16px; }
     .hero-title { font-size: 2rem; margin-bottom: 8px; letter-spacing: 0.2px; }
     .hero-sub { font-size: 1rem; color: #3d4655; line-height: 1.55; margin: 0 0 14px 0; }
+    
     .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 2px 0; }
     .pill { display: inline-block; background: #eef4ff; border: 1px solid #d7e5ff; color: #1f3a6b; padding: 6px 10px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; white-space: nowrap; }
-    .btn { display: inline-block; padding: 11px 18px; border-radius: 6px; border: none; background: #0072ff; color: #fff; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none; }
+    
+    .btn { display: inline-block; padding: 11px 18px; border-radius: 6px; border: none; background: #0072ff; color: #fff; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: none; text-align: center; }
     .btn:hover { background: #0059c4; }
     .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
-    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    @media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
+    
+    /* PART GRID: Items maintain size and don't stretch */
+    .grid-parts { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+      gap: 16px; 
+      margin-bottom: 20px;
+    }
+
     .kicker { color: #2c3e50; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
     .muted { color: #4b5563; line-height: 1.5; margin: 0; }
     .info-line { display: flex; justify-content: space-between; gap: 12px; padding: 10px 10px; border-bottom: 1px solid #e6ebf7; font-size: 0.92rem; }
     .info-line:last-child { border-bottom: none; }
     .info-key { color: #334155; font-weight: 700; }
     .info-val { color: #111827; font-weight: 600; text-align: right; }
-    footer { text-align: center; font-size: 0.8rem; color: #555; padding: 15px; }
-        .media {
-      width: 100%;
-      max-width: 2rem;
-    }
+    
+    .media { width: 100%; max-width: 2rem; }
+
     .card-img {
-      width: 100%;
+      width: calc(100% + 44px);
       height: 200px; 
       object-fit: cover;
       border-radius: 8px 8px 0 0; 
       margin: -22px -22px 15px -22px; 
-      width: calc(100% + 44px);
       display: block;
     }
-    
-    @media (max-width: 720px) {
-      .card-img { height: 180px; }
-    }
+    @media (max-width: 720px) { .card-img { height: 180px; } }
+
     .price-tag { color: #0072ff; font-size: 1.2rem; font-weight: 800; }
     .legal-box { font-size: 0.82rem; line-height: 1.4; color: #475569; background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; }
+    footer { text-align: center; font-size: 0.8rem; color: #555; padding: 15px; }
   </style>
 </head>
 
@@ -88,7 +93,7 @@
         <h1 class="hero-title">Quality Used Parts Store</h1>
         <p class="hero-sub">
           We source donor vehicles and dismantle them with care. Every major component is 
-          <strong>inspected and stored indoors at a minimum of 50 degrees fahrenheit</strong> to protect the internals from the elements. 
+          <strong>inspected and stored indoors at a minimum of 50&deg;F</strong> to protect the internals from the elements. 
         </p>
         <div class="pill-row">
           <span class="pill">Indoor Stored</span>
@@ -105,58 +110,71 @@
           Contact us via Facebook to schedule a viewing.
         </p>
         <div class="btn-row">
-           <a class="btn" style="width:100%; text-align:center;" href="https://www.facebook.com/profile.php?id=61586049606841">Message on Facebook</a>
+           <a class="btn" style="width:100%;" href="https://www.facebook.com/profile.php?id=61586049606841">Message on Facebook</a>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="grid-2">
-    <h1><strong>NO ITEMS AVAILABLE AT THIS TIME</strong></h1>
-    <div class="card">
-    <img src="Facebook_Logo_Primary.png" class="card-img" alt="Part Description">
-    
-    <div class="kicker">Grade A Used Part</div>
-    <h3 style="margin-bottom:8px;">[NAME OF PART]</h3>
-    
-    <div class="pill-row">
-        <span class="pill">[MILEAGE]</span>
-        <span class="pill">Genuine OEM</span>
-        <span class="pill">Tested: Excellent</span>
-    </div>
-    
-    <div style="margin:16px 0;">
-        <div class="info-line"><span class="info-key">Donor VIN</span><span class="info-val">[VIN_HERE]</span></div>
-        <div class="info-line"><span class="info-key">Base Price</span><span class="info-val price-tag">$[0.00]</span></div>
-    </div>
-    
-    <strong>Professional Description:</strong>
-    <p class="muted" style="font-size:0.88rem; margin-top:5px;">
-        [DETAILED DESCRIPTION HERE: Mention timing chain status, oil color, and storage method. Be blunt and technical.]
-    </p>
-    
-    <div class="btn-row">
-        <a class="btn" href="FB_MARKETPLACE_LINK" target="_blank">View on Marketplace</a>
-    </div>
-</div>
+  <div class="card" style="text-align:center; padding: 50px 20px;">
+    <h2 style="color: #002b5b; margin:0;">NO ITEMS AVAILABLE AT THIS TIME</h2>
+    <p class="muted" style="margin-top:10px;">We are currently processing new inventory. Check back soon.</p>
+  </div>
+          <div class="card">
+            <img src="YOUR_IMAGE_NAME.jpg" class="card-img" alt="Part Name">
+            
+            <div class="kicker">Grade A Used Part</div>
+            <h3 style="margin-bottom:8px;">NAME OF PART (YEAR/MAKE/MODEL)</h3>
+            
+            <div class="pill-row">
+              <span class="pill">000,000 MILES</span>
+              <span class="pill">Genuine OEM</span>
+              <span class="pill">Tested: Excellent</span>
+            </div>
+            
+            <div style="margin:16px 0;">
+              <div class="info-line">
+                <span class="info-key">Donor VIN</span>
+                <span class="info-val">VIN_HERE</span>
+              </div>
+              <div class="info-line">
+                <span class="info-key">Base Price</span>
+                <span class="info-val price-tag">$0.00</span>
+              </div>
+            </div>
+            
+            <strong>Professional Description:</strong>
+            <p class="muted" style="font-size:0.88rem; margin-top:5px;">
+              <strong>Inspection Notes:</strong> Pulled from a donor with [MILEAGE] miles. 
+              Oil was [COLOR/CONDITION] with no debris. [COMPONENT SPECIFICS: e.g., Timing chain guides verified tight]. 
+              Unit has been drained, capped, and stored indoors at 50°F+ on tire-cribbing.
+            </p>
+            
+            <div class="btn-row">
+              <a class="btn" style="width:100%;" href="FACEBOOK_MARKETPLACE_URL" target="_blank">View on Marketplace</a>
+            </div>
+          </div>
+  <div class="grid-parts">
 
+    </div>
 
   <div class="card">
     <h2>Terms of Sale & Disclaimer</h2>
     <div class="legal-box">
       <p><strong>1. "AS-IS" SALE:</strong> ALL COMPONENTS ARE SOLD "AS-IS, WHERE-IS" WITH ALL FAULTS. NIBLETT'S GARAGE LLC MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</p>
-      
       <p><strong>2. OPPORTUNITY TO BARGAIN & INSPECT:</strong> By purchasing, the Buyer acknowledges they have been given a bona fide opportunity to inspect the part as fully as desired. The price of the part reflects its salvaged nature and the Buyer's assumption of risk.</p>
-      
       <p><strong>3. LIMITATION OF LIABILITY:</strong> Niblett's Garage LLC shall not be liable for any direct, indirect, incidental, or consequential damages (including, without limitation, personal injury, property damage, or lost wages) arising from the use or installation of these salvaged components.</p>
-      
       <p><strong>4. INSTALLATION:</strong> Professional installation is strictly recommended. Buyer assumes all risk associated with the installation and operation of the component.</p>
     </div>
   </div>
-<div class="card">
-  <h2>Follow Us On Social Media!</h2>
-  <a href="https://www.facebook.com/profile.php?id=61586049606841"><img class="media" src="Facebook_Logo_Primary.png"></a>
-</div>
+
+  <div class="card">
+    <h2>Follow Us On Social Media!</h2>
+    <a href="https://www.facebook.com/profile.php?id=61586049606841">
+        <img class="media" src="Facebook_Logo_Primary.png" alt="Facebook Logo">
+    </a>
+  </div>
+
   <div class="card" style="font-size:0.85rem; color:#555;">
     <h3>Disclaimer</h3>
     <p style="margin:0; line-height:1.55;">
@@ -165,6 +183,7 @@
   </div>
 
 </div>
+
 <footer>
   &copy; <span id="year"></span> Niblett's Garage LLC. All rights reserved.
 </footer>
