@@ -7,208 +7,48 @@
 
   <meta name="google-site-verification" content="40HXTKwrisCKyf-YB7BtlwI1-2Vf_zXs2--BwtVV4Jo" />
   <meta charset="UTF-8">
-  <meta name="description" content="Automotive repair and maintenance serving the Chippewa Valley. Straightforward service, clear pricing, quality parts, and professional workmanship.">
-  <meta name="keywords" content="auto repair, mechanic, brakes, oil change, diagnostics, suspension, wheel bearings, Chippewa Valley, Chippewa Falls, Eau Claire">
-  <title>Niblett's Garage</title>
+  <meta name="description" content="Mobile automotive repair serving the Chippewa Valley. We bring the shop to your driveway. Oil changes, batteries, and brakes at your convenience.">
+  <meta name="keywords" content="mobile mechanic, auto repair, Chippewa Falls, Eau Claire, oil change, battery replacement, tire rotation">
+  <title>Niblett's Garage | Mobile Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f3f6fb;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #002b5b;
-      color: #fff;
-      padding: 14px 15px 18px;
-      text-align: center;
-    }
-    img {
-      width: 100%;
-      max-width: 25rem;
-      height: auto;
-    }
-    .brandmark {
-      display: block;
-      margin: 0 auto;
-      max-width: 23rem;
-    }
-
-    nav {
-      background: #001932;
-      padding: 10px 15px;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 12px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      display: inline-block;
-      padding: 6px 0;
-      opacity: 0.95;
-    }
-    nav a:hover {
-      text-decoration: underline;
-      opacity: 1;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 26px auto;
-      padding: 0 15px 34px;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 22px 22px 26px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-      margin-bottom: 20px;
-    }
+    /* Keeping your existing styles for branding consistency */
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f3f6fb; margin: 0; padding: 0; }
+    header { background: #002b5b; color: #fff; padding: 14px 15px 18px; text-align: center; }
+    .brandmark { display: block; margin: 0 auto; max-width: 23rem; width: 100%; height: auto; }
+    nav { background: #001932; padding: 10px 15px; text-align: center; }
+    nav a { color: #fff; text-decoration: none; margin: 0 12px; font-size: 0.95rem; font-weight: 600; display: inline-block; padding: 6px 0; opacity: 0.95; }
+    nav a:hover { text-decoration: underline; opacity: 1; }
+    .container { max-width: 900px; margin: 26px auto; padding: 0 15px 34px; }
+    .card { background: #ffffff; border-radius: 10px; padding: 22px 22px 26px; box-shadow: 0 6px 18px rgba(0,0,0,0.07); margin-bottom: 20px; }
     h1, h2, h3 { margin-top: 0; }
-
-    .hero {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-    .hero-left {
-      flex: 1 1 520px;
-      min-width: 260px;
-    }
-    .hero-right {
-      flex: 1 1 260px;
-      min-width: 240px;
-      background: #f7f9ff;
-      border: 1px solid #e6ebf7;
-      border-radius: 10px;
-      padding: 14px 14px 16px;
-    }
-    .hero-title {
-      font-size: 2rem;
-      margin-bottom: 8px;
-      letter-spacing: 0.2px;
-    }
-    .hero-sub {
-      font-size: 1rem;
-      color: #3d4655;
-      line-height: 1.55;
-      margin: 0 0 14px 0;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0 2px 0;
-    }
-    .pill {
-      display: inline-block;
-      background: #eef4ff;
-      border: 1px solid #d7e5ff;
-      color: #1f3a6b;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 11px 18px;
-      border-radius: 6px;
-      border: none;
-      background: #0072ff;
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.95rem;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .btn:hover { background: #0059c4; }
-    .btn-secondary {
-      background: #e9eef9;
-      color: #12305f;
-      border: 1px solid #d7def0;
-    }
-    .btn-secondary:hover { background: #dde6fb; }
-
-    ul { padding-left: 20px; margin: 10px 0 0 0; }
-    li { margin: 6px 0; line-height: 1.45; }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-    @media (max-width: 720px) {
-      .grid-2 { grid-template-columns: 1fr; }
-    }
-
-    .kicker {
-      color: #2c3e50;
-      font-weight: 800;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 6px;
-    }
-    .muted { color: #4b5563; line-height: 1.5; margin: 0; }
-
-    .info-line {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 10px;
-      border-bottom: 1px solid #e6ebf7;
-      font-size: 0.92rem;
-    }
-    .info-line:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-    .info-key { color: #334155; font-weight: 700; }
+    .hero { display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap; }
+    .hero-left { flex: 1 1 520px; min-width: 260px; }
+    .hero-right { flex: 1 1 260px; min-width: 240px; background: #f7f9ff; border: 1px solid #e6ebf7; border-radius: 10px; padding: 14px 14px 16px; }
+    .hero-title { font-size: 2.2rem; margin-bottom: 8px; color: #002b5b; }
+    .hero-sub { font-size: 1.1rem; color: #3d4655; line-height: 1.55; margin: 0 0 14px 0; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 20px 0; }
+    .pill { display: inline-block; background: #eef4ff; border: 1px solid #d7e5ff; color: #1f3a6b; padding: 6px 10px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; }
+    .btn-row { margin-top: 14px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    @media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
+    .kicker { color: #d32f2f; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .info-line { display: flex; justify-content: space-between; gap: 12px; padding: 10px 10px; border-bottom: 1px solid #e6ebf7; font-size: 0.92rem; }
     .info-val { color: #111827; font-weight: 600; text-align: right; }
-
-    .media {
-      width: 100%;
-      max-width: 2rem;
-    }
-
-    .disclaimer {
-      font-size: 0.85rem;
-      color: #555;
-      line-height: 1.55;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #555;
-      padding: 15px;
-    }
+    .disclaimer { font-size: 0.85rem; color: #555; line-height: 1.55; }
+    footer { text-align: center; font-size: 0.8rem; color: #555; padding: 15px; }
+    .shop-callout { background: #fff8e1; border-left: 4px solid #ffc107; padding: 15px; border-radius: 4px; margin-top: 10px; }
   </style>
 </head>
 
 <body>
 <header>
   <a href="index.html">
-    <img class="brandmark" src="nibletts-garage-high-resolution-logo-transparent.png" alt="Niblett's Garage main logo">
+    <img class="brandmark" src="nibletts-garage-high-resolution-logo-transparent.png" alt="Niblett's Garage logo">
   </a>
 </header>
 
-<nav>
   <a href="index.html">Mechanic Services</a>
   <a href="parts.html">Used Parts For Sale</a>
   <a href="plowing.html">Snow Plowing</a>
@@ -221,113 +61,53 @@
   <div class="card">
     <div class="hero">
       <div class="hero-left">
-        <div class="kicker">Automotive Repair & Maintenance</div>
-        <h1 class="hero-title">Professional Service You Can Trust</h1>
+        <div class="kicker">Mobile Mechanic Service</div>
+        <h1 class="hero-title">We Bring the Shop to Your Driveway</h1>
         <p class="hero-sub">
-          Serving the <strong>Chippewa Valley</strong> with straightforward diagnostics, quality parts, and clear communication.
-          You get realistic options and upfront expectations before any work begins.
+          Skip the waiting room. Serving the <strong>Chippewa Valley</strong> with professional on-site maintenance and repair. We handle the work while you stay in the comfort of your home.
         </p>
 
         <div class="pill-row">
-          <span class="pill">Clear estimates</span>
-          <span class="pill">Quality workmanship</span>
-          <span class="pill">Honest recommendations</span>
-          <span class="pill">Local & responsive</span>
+          <span class="pill">At-Home Service</span>
+          <span class="pill">Zero-Trace Cleanup</span>
+          <span class="pill">Upfront Pricing</span>
+          <span class="pill">Licensed & Insured</span>
         </div>
 
         <div class="btn-row">
-          <!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script><!-- End Square Appointments Embed Code -->
+          <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script>
         </div>
 
-        <p class="disclaimer" style="margin-top:12px;">
-          <strong>Mobile service costs more</strong> due to travel and on-site setup time. Shop/drop-off service is the most cost-effective option.
+        <p class="disclaimer" style="margin-top:16px;">
+          <strong>Booking Requirement:</strong> You must provide the VIN or Year/Make/Model/Trim/Engine and your service address in the appointment notes or your request will be declined.
         </p>
       </div>
 
       <div class="hero-right">
-        <h3 style="margin:0 0 10px 0;">Service Details</h3>
+        <h3 style="margin:0 0 10px 0;">Service Area</h3>
         <div class="info-line">
-          <span class="info-key">Area</span>
-          <span class="info-val">Chippewa Valley, WI</span>
+          <span class="info-val">The Chippewa Valley</span>
         </div>
-        <div class="info-line">
-          <span class="info-key">Appointments</span>
-          <span class="info-val">Scheduled</span>
-        </div>
-        <div class="info-line">
-          <span class="info-key">Estimates</span>
-          <span class="info-val">After review</span>
-        </div>
-        <div class="info-line">
-          <span class="info-key">Diagnostics</span>
-          <span class="info-val">Case-by-case</span>
-        </div>
-        <p class="disclaimer" style="margin-top:10px;">
-          For fastest turnaround, submit year/make/model and a clear description of symptoms.
-        </p>
       </div>
     </div>
   </div>
- 
+
   <div class="card">
-    <h2>Services</h2>
+    <h2>Mobile Service Menu</h2>
     <div class="grid-2">
       <div>
-        <h3 style="margin-bottom:6px;">Maintenance & Basics</h3>
-        <ul>
-          <li>General fluid services (oil, coolant, brake fluid, power steering, differential/transfer case as applicable)</li>
-          <li>Windshield washer fluid and basic top-offs</li>
-          <li>Wiper blade replacement</li>
-          <li>Battery jump-starts / no-start assistance</li>
-        </ul>
-      </div>
-      <div>
-        <h3 style="margin-bottom:6px;">Repair & Diagnostics</h3>
-        <ul>
-          <li>Brake work (inspection, pads/rotors/calipers as needed)</li>
-          <li>Suspension & steering work (tie rods, ball joints, control arms, sway links, shocks/struts)</li>
-          <li>Engine work (case-by-case: leaks, belts, sensors, tune-up items, basic repairs)</li>
-          <li>Diagnostics (warning lights, noises/vibrations, drivability issues, electrical basics)</li>
+        <h3 style="margin-bottom:6px;">All Prices Include The Cost of Parts</h3>
+        <ul style="line-height: 1.6;">
+          <li><strong>Full Synthetic Oil Change:</strong> $100 - $140</li>
+          <li><strong>Battery Replacement:</strong> $240 - $300</li>
+          <li><strong>Vehicle Care Package:</strong> $190 - $240</li>
+          <li><strong>Wiper Blade Swap:</strong> $80 - $100</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <h2>Advanced Support When Needed</h2>
-    <div class="callout">
-      For complex diagnostics or higher-skill repairs, we have access to an experienced <strong>master-level mechanic</strong>
-      we can bring in as needed. If an issue requires deeper troubleshooting or specialized expertise, we’ll coordinate support
-      to get it diagnosed correctly and repaired the right way — with clear communication and approval before any additional work is performed.
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>How It Works</h2>
-    <ol style="margin: 8px 0 0 18px; line-height: 1.55;">
-      <li><strong>Submit a request:</strong> Provide your contact info and vehicle details.</li>
-      <li><strong>Quick review:</strong> We look over symptoms and ask follow-up questions if needed.</li>
-      <li><strong>Quote + scheduling:</strong> You get clear options and next steps.</li>
-      <li><strong>Work begins after approval:</strong> No surprise add-ons without your go-ahead.</li>
-    </ol>
-  </div>
-  
-<div class="card">
-  <h2>Follow Us On Social Media!</h2>
-  <a href="https://www.facebook.com/profile.php?id=61586049606841"><img class="media" src="Facebook_Logo_Primary.png"></a>
 </div>
-  
-  <div class="card" style="font-size:0.85rem; color:#555;">
-    <h3>Disclaimer</h3>
-    <p style="margin:0; line-height:1.55;">
-      Submitting a request does not create a service agreement or guarantee repair work. Pricing and scheduling depend on
-      inspection, parts availability, and workload. Diagnostic time may be billed depending on the issue and complexity.
-      We will not proceed with additional work beyond the approved scope without contacting you first.
-    </p>
-  </div>
-
-</div>
-
 
 <footer>
   &copy; <span id="year"></span> Niblett's Garage LLC. All rights reserved.
