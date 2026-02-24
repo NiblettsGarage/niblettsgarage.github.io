@@ -14,13 +14,15 @@
 
   <style>
     :root {
-      --primary-blue: #0072ff;
-      --primary-blue-hover: #0059c4;
       --brand-red: #c8102e;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --bg-light: #f8fafc;
-      --border-color: #e2e8f0;
+      --brand-red-dark: #a00d25;
+      --dark-bg: #111827;
+      --darker-bg: #030712;
+      --light-bg: #f3f4f6;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --white: #ffffff;
+      --border: #e5e7eb;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,214 +30,199 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text-main);
-      background-color: #ffffff;
+      background-color: var(--white);
       line-height: 1.6;
     }
 
-    /* --- Navigation & Header --- */
-    .top-bar {
-      background: var(--bg-light);
-      border-bottom: 1px solid var(--border-color);
+    /* --- Full-Bleed Sections --- */
+    section {
+      width: 100%;
+      padding: 80px 20px;
+    }
+    .section-dark {
+      background-color: var(--dark-bg);
+      color: var(--white);
+    }
+    .section-light {
+      background-color: var(--light-bg);
+    }
+    
+    /* Center container bounds the content so it doesn't stretch infinitely */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* --- Header & Nav --- */
+    header {
+      background-color: var(--darker-bg);
+      padding: 20px;
       text-align: center;
-      padding: 20px 15px 15px;
+      border-bottom: 4px solid var(--brand-red);
     }
     .brandmark {
-      max-width: 320px;
+      max-width: 350px;
       width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
     }
     nav {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border-color);
+      background-color: var(--dark-bg);
       display: flex;
       justify-content: center;
-      padding: 12px 20px;
-      gap: 30px;
+      padding: 15px 20px;
+      gap: 40px;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
     nav a {
-      color: var(--text-main);
+      color: var(--white);
       text-decoration: none;
       font-weight: 700;
-      font-size: 1rem;
-      transition: color 0.2s ease;
-    }
-    nav a:hover { color: var(--primary-blue); }
-
-    /* --- Universal Section Styling --- */
-    section { padding: 60px 20px; }
-    .section-light { background-color: var(--bg-light); }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .text-center { text-center; }
-
-    /* --- Hero Section --- */
-    .hero {
-      text-align: center;
-      padding: 80px 20px 60px;
-    }
-    .kicker {
-      color: var(--brand-red);
-      font-weight: 800;
+      font-size: 1.05rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-      display: block;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--brand-red); }
+
+    /* --- Hero Area --- */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
     }
     .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-size: clamp(2.5rem, 5vw, 4rem);
       line-height: 1.1;
       margin-bottom: 20px;
       color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: -1px;
     }
     .hero p {
-      font-size: 1.125rem;
+      font-size: 1.2rem;
       color: var(--text-muted);
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto 30px;
     }
-    
-    .pill-row {
+    .kicker {
+      color: var(--brand-red);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    /* --- Info Pills --- */
+    .pill-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 15px;
       margin-bottom: 20px;
     }
     .pill {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      color: var(--primary-blue-hover);
-      padding: 6px 16px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 600;
+      background: var(--white);
+      border: 2px solid var(--border);
+      color: var(--text-main);
+      padding: 8px 20px;
+      border-radius: 4px; /* Squared off, more industrial */
+      font-size: 0.95rem;
+      font-weight: 700;
     }
-    .pill.pill-alert {
-      background: #fef2f2;
-      border-color: #fecaca;
+    .pill.pill-red {
+      border-color: var(--brand-red);
       color: var(--brand-red);
+      background: #fff0f2;
     }
 
-    /* --- Booking Section --- */
-    .booking-wrapper {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      margin-top: -20px;
+    /* --- Booking Area --- */
+    .booking-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 0;
     }
-    .disclaimer {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      background: var(--bg-light);
-      border-left: 4px solid var(--brand-red);
-      padding: 12px 16px;
-      margin-top: 20px;
-      border-radius: 0 8px 8px 0;
+    .disclaimer-box {
+      background: var(--light-bg);
+      border-left: 6px solid var(--brand-red);
+      padding: 20px;
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: var(--text-main);
     }
 
-    /* --- Services Grid --- */
-    .section-title {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    .service-card {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      padding: 24px;
+    /* --- Combined Service Menu --- */
+    .service-menu-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--darker-bg);
+      border: 1px solid #374151;
       border-radius: 8px;
+      padding: 40px;
     }
-    .service-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-      color: var(--primary-blue);
+    .service-menu-wrapper h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    .service-list {
-      list-style: none;
+    .service-menu-wrapper p.sub {
+      text-align: center;
+      color: #9ca3af;
+      margin-bottom: 30px;
     }
-    .service-list li {
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      column-gap: 50px;
+      row-gap: 30px;
+    }
+    .menu-item {
       display: flex;
       justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border-color);
+      align-items: baseline;
+      border-bottom: 1px solid #374151;
+      padding-bottom: 10px;
     }
-    .service-list li:last-child { border-bottom: none; }
-    .service-name { font-weight: 600; }
-    .service-price { color: var(--text-muted); font-weight: 500; }
-
-    /* --- How it Works --- */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
+    .menu-item-name {
+      font-weight: 700;
+      font-size: 1.1rem;
     }
-    .step {
-      text-align: center;
+    .menu-item-price {
+      font-weight: 700;
+      color: var(--brand-red);
+      font-size: 1.1rem;
     }
-    .step-number {
-      background: var(--primary-blue);
-      color: #fff;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin: 0 auto 16px;
-    }
-    .step h4 { margin-bottom: 8px; font-size: 1.1rem; }
-    .step p { color: var(--text-muted); font-size: 0.95rem; }
 
     /* --- Footer --- */
     footer {
-      background: #111827;
+      background-color: var(--darker-bg);
       color: #9ca3af;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
+      padding: 40px 20px;
+      border-top: 1px solid #374151;
     }
-    .social-icon {
-      width: 32px;
-      height: 32px;
-      margin-bottom: 15px;
-      opacity: 0.8;
-      transition: opacity 0.2s;
-    }
-    .social-icon:hover { opacity: 1; }
 
     @media (max-width: 768px) {
-      .booking-wrapper { padding: 20px; }
-      section { padding: 40px 15px; }
+      section { padding: 50px 15px; }
+      .service-menu-wrapper { padding: 25px 15px; }
+      .menu-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="top-bar">
+<header>
   <a href="index.html">
     <img class="brandmark" src="nibletts-garage-high-resolution-logo-transparent.png" alt="Niblett's Garage main logo">
   </a>
-</div>
+</header>
 
 <nav>
   <a href="index.html">Mobile Services</a>
@@ -247,102 +234,80 @@
     <div class="container">
       <span class="kicker">Mobile Automotive Service</span>
       <h1>We Bring The Shop To You</h1>
-      <p>Serving the <strong>Chippewa Valley</strong> with professional on-site maintenance and repair. Skip the waiting room—get straightforward service and quality parts right in your own driveway.</p>
+      <p>Serving the <strong>Chippewa Valley</strong> with professional on-site maintenance and repair. Skip the waiting room—get straightforward service right in your driveway.</p>
       
-      <div class="pill-row">
-        <span class="pill">At-home convenience</span>
-        <span class="pill">Quality workmanship</span>
-        <span class="pill">Zero-trace cleanup</span>
+      <div class="pill-container">
+        <span class="pill">At-Home Convenience</span>
+        <span class="pill">Quality Workmanship</span>
+        <span class="pill">Zero-Trace Cleanup</span>
       </div>
-      <div class="pill-row">
-        <span class="pill pill-alert">📍 Chippewa Valley, WI</span>
-        <span class="pill pill-alert">⏱️ 48h Minimum Notice</span>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top: 0;">
-    <div class="container">
-      <div class="booking-wrapper">
-        <h2 style="text-align: center; margin-bottom: 30px;">Book an Appointment</h2>
-        
-        <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script>
-        
-        <div class="disclaimer">
-          <strong>CRITICAL BOOKING REQUIREMENT:</strong> You must include your Vehicle Year, Make, Model, Trim, Engine, OR VIN, AND the service location in the 'Appointment Notes' field or your request will be automatically declined. Final cost may vary based on vehicle condition (rust, seized hardware, etc). Must be parked on a flat, solid surface.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-light">
-    <div class="container">
-      <h2 class="section-title">Common Mobile Services</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-top: -30px; margin-bottom: 40px;">All standard pricing includes the cost of parts.</p>
-      
-      <div class="grid-3">
-        <div class="service-card">
-          <h3>Fluids & Filters</h3>
-          <ul class="service-list">
-            <li><span class="service-name">Full Synthetic Oil Change</span> <span class="service-price">$100 - $140</span></li>
-            <li><span class="service-name">Vehicle Care Package</span> <span class="service-price">$190 - $240</span></li>
-          </ul>
-        </div>
-        
-        <div class="service-card">
-          <h3>Wheels & Batteries</h3>
-          <ul class="service-list">
-            <li><span class="service-name">Tire Rotation</span> <span class="service-price">$80</span></li>
-            <li><span class="service-name">Battery Replacement</span> <span class="service-price">$240 - $300</span></li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <h3>General Maintenance</h3>
-          <ul class="service-list">
-            <li><span class="service-name">Wiper Blade Replacement</span> <span class="service-price">$80 - $100</span></li>
-            <li><span class="service-name">Custom Diagnostic/Repair</span> <span class="service-price">By Quote</span></li>
-          </ul>
-        </div>
+      <div class="pill-container">
+        <span class="pill pill-red">📍 Chippewa Valley, WI</span>
+        <span class="pill pill-red">⏱️ 48h Minimum Notice</span>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <h2 class="section-title">How Mobile Service Works</h2>
-      
-      <div class="steps-grid">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h4>Select Service</h4>
-          <p>Choose your needed maintenance or request a custom quote.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <h4>Provide Details</h4>
-          <p>Give us your exact vehicle specs and the location of the vehicle.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h4>Review & Approve</h4>
-          <p>We verify parts availability and confirm your time slot.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">4</div>
-          <h4>Driveway Service</h4>
-          <p>We arrive on schedule and complete the work on a flat, solid surface.</p>
+      <div class="booking-container">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase;">Book an Appointment</h2>
+        
+        <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script>
+        
+        <div class="disclaimer-box">
+          <strong>CRITICAL BOOKING REQUIREMENT:</strong> You must include your Vehicle Year, Make, Model, Trim, Engine, OR VIN, <strong>AND the service location</strong> in the 'Appointment Notes' field or your request will be automatically declined. Final cost may vary based on vehicle condition (rust, seized hardware, etc). Vehicle must be parked on a flat, solid surface.
         </div>
       </div>
     </div>
   </section>
 
+  <section class="section-dark">
+    <div class="container">
+      <div class="service-menu-wrapper">
+        <h2>Standard Service Menu</h2>
+        <p class="sub">All prices include the cost of parts and mobile travel.</p>
+        
+        <div class="menu-grid">
+          <div>
+            <div class="menu-item">
+              <span class="menu-item-name">Full Synthetic Oil Change</span>
+              <span class="menu-item-price">$100 - $140</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 15px; margin-top: 5px;">Up to 9 quarts.</div>
+
+            <div class="menu-item">
+              <span class="menu-item-name">Vehicle Care Package</span>
+              <span class="menu-item-price">$190 - $240</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 15px; margin-top: 5px;">Comprehensive fluid and filter service.</div>
+          </div>
+
+          <div>
+            <div class="menu-item">
+              <span class="menu-item-name">Battery Replacement</span>
+              <span class="menu-item-price">$240 - $300</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 15px; margin-top: 5px;">Includes installation and terminal cleaning.</div>
+
+            <div class="menu-item">
+              <span class="menu-item-name">Tire Rotation</span>
+              <span class="menu-item-price">$80</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 15px; margin-top: 5px;">Ensure even tread wear.</div>
+
+            <div class="menu-item">
+              <span class="menu-item-name">Wiper Blade Replacement</span>
+              <span class="menu-item-price">$80 - $100</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <a href="https://www.facebook.com/profile.php?id=61586049606841" target="_blank">
-    <img class="social-icon" src="Facebook_Logo_Primary.png" alt="Facebook">
-  </a>
   <p>&copy; <span id="year"></span> Niblett's Garage LLC. All rights reserved.</p>
 </footer>
 
