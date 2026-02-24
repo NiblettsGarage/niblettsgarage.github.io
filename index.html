@@ -71,10 +71,10 @@
     h1, h2, h3 { margin-top: 0; }
 
     .hero {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      flex-wrap: wrap;
+      display: block; 
+    }
+    .hero-full {
+      width: 100%;
     }
     .hero-left {
       flex: 1 1 520px;
@@ -217,7 +217,7 @@
 
   <div class="card">
     <div class="hero">
-      <div class="hero-left">
+      <div class="hero-full">
         <div class="kicker">Mobile Automotive Service</div>
         <h1 class="hero-title">We Bring The Shop To You</h1>
         <p class="hero-sub">
@@ -230,10 +230,17 @@
           <span class="pill">Honest recommendations</span>
           <span class="pill">Zero-trace cleanup</span>
         </div>
+        
+        <div class="pill-row" style="margin-top: 10px;">
+          <span class="pill" style="background: #fff; border: 1px solid #002b5b;">📍 Chippewa Valley, WI</span>
+          <span class="pill" style="background: #fff; border: 1px solid #002b5b;">⏱️ 48h Minimum Notice</span>
+        </div>
+
         <br>
         <div class="kicker">Appointment Booker</div>
         <div class="btn-row">
-          <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script></div>
+          <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script>
+        </div>
 
         <p class="disclaimer" style="margin-top:12px;">
           <strong>BOOKING REQUIREMENT:</strong> You must include your Vehicle Year, Make, Model, Trim, Engine, OR VIN, AND the service location in the 'Appointment Notes' field or your request will be declined.
