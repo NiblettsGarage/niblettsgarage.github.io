@@ -27,7 +27,6 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Flexbox Sticky Footer Setup & Nuke Side Gaps */
     html, body {
       height: 100%;
       width: 100vw;
@@ -42,11 +41,18 @@
       line-height: 1.6;
       display: flex;
       flex-direction: column;
+      min-height: 100vh; /* Forces body to be at least the height of the screen */
     }
 
     main {
-      flex: 1 0 auto; /* Pushes footer to bottom even with empty space */
-      background-color: var(--light-bg); /* Fills the remaining space with the correct color */
+      flex: 1 0 auto; 
+      display: flex;
+      flex-direction: column;
+      background-color: var(--light-bg); 
+    }
+
+    main > section {
+      flex: 1; /* Makes the section stretch to fill main */
     }
 
     footer {
@@ -98,7 +104,6 @@
     }
     nav a:hover { color: var(--brand-red); }
 
-    /* --- Page Headers --- */
     .page-header {
       text-align: center;
       margin-bottom: 60px;
@@ -118,7 +123,6 @@
       letter-spacing: -1px;
     }
 
-    /* --- Contact Layout --- */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
