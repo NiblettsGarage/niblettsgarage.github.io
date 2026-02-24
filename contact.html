@@ -27,18 +27,36 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* Flexbox Sticky Footer Setup & Nuke Side Gaps */
+    html, body {
+      height: 100%;
+      width: 100vw;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text-main);
       background-color: var(--white);
       line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto; /* Pushes footer to bottom even with empty space */
+      background-color: var(--light-bg); /* Fills the remaining space with the correct color */
+    }
+
+    footer {
+      flex-shrink: 0;
     }
 
     section {
       width: 100%;
       padding: 80px 20px;
     }
-    .section-light { background-color: var(--light-bg); }
     
     .container {
       max-width: 1000px;
@@ -207,7 +225,7 @@
 </nav>
 
 <main>
-  <section class="section-light">
+  <section>
     <div class="container">
       
       <div class="page-header">
