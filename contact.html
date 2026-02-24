@@ -27,41 +27,35 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html, body {
-      height: 100%;
-      width: 100vw;
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text-main);
-      background-color: var(--white);
+      background-color: var(--light-bg); /* Match main bg */
       line-height: 1.6;
       display: flex;
       flex-direction: column;
-      min-height: 100vh; /* Forces body to be at least the height of the screen */
+      min-height: 100vh; 
     }
 
     main {
       flex: 1 0 auto; 
       display: flex;
       flex-direction: column;
-      background-color: var(--light-bg); 
     }
 
     main > section {
-      flex: 1; /* Makes the section stretch to fill main */
+      flex: 1; /* Stretches section to push footer down */
+      width: 100%;
+      padding: 80px 20px;
     }
 
     footer {
       flex-shrink: 0;
-    }
-
-    section {
-      width: 100%;
-      padding: 80px 20px;
+      background-color: var(--darker-bg);
+      color: #9ca3af;
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #374151;
     }
     
     .container {
@@ -200,16 +194,8 @@
     }
     .btn:hover { background: var(--brand-red-dark); }
 
-    footer {
-      background-color: var(--darker-bg);
-      color: #9ca3af;
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid #374151;
-    }
-
     @media (max-width: 768px) {
-      section { padding: 40px 15px; }
+      main > section { padding: 40px 15px; }
       .contact-panel { padding: 25px; }
     }
   </style>
