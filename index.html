@@ -9,311 +9,341 @@
   <meta charset="UTF-8">
   <meta name="description" content="Mobile automotive repair and maintenance serving the Chippewa Valley. We bring the shop to your driveway with clear pricing and professional service.">
   <meta name="keywords" content="mobile mechanic, auto repair, brakes, oil change, Chippewa Valley, Chippewa Falls, Eau Claire">
-  <title>Niblett's Garage</title>
+  <title>Niblett's Garage | Mobile Auto Repair</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    :root {
+      --primary-blue: #0072ff;
+      --primary-blue-hover: #0059c4;
+      --brand-red: #c8102e;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --bg-light: #f8fafc;
+      --border-color: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f3f6fb;
-      margin: 0;
-      padding: 0;
+      color: var(--text-main);
+      background-color: #ffffff;
+      line-height: 1.6;
     }
-    header {
-      background: #002b5b;
-      color: #fff;
-      padding: 14px 15px 18px;
+
+    /* --- Navigation & Header --- */
+    .top-bar {
+      background: var(--bg-light);
+      border-bottom: 1px solid var(--border-color);
       text-align: center;
-    }
-    img {
-      width: 100%;
-      max-width: 25rem;
-      height: auto;
+      padding: 20px 15px 15px;
     }
     .brandmark {
+      max-width: 320px;
+      width: 100%;
+      height: auto;
       display: block;
       margin: 0 auto;
-      max-width: 23rem;
     }
-
     nav {
-      background: #001932;
-      padding: 10px 15px;
-      text-align: center;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: center;
+      padding: 12px 20px;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
     nav a {
-      color: #fff;
+      color: var(--text-main);
       text-decoration: none;
-      margin: 0 12px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      display: inline-block;
-      padding: 6px 0;
-      opacity: 0.95;
-    }
-    nav a:hover {
-      text-decoration: underline;
-      opacity: 1;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 26px auto;
-      padding: 0 15px 34px;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 22px 22px 26px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-      margin-bottom: 20px;
-    }
-    h1, h2, h3 { margin-top: 0; }
-
-    .hero {
-      display: block; 
-    }
-    .hero-full {
-      width: 100%;
-    }
-    .hero-left {
-      flex: 1 1 520px;
-      min-width: 260px;
-    }
-    .hero-right {
-      flex: 1 1 260px;
-      min-width: 240px;
-      background: #f7f9ff;
-      border: 1px solid #e6ebf7;
-      border-radius: 10px;
-      padding: 14px 14px 16px;
-    }
-    .hero-title {
-      font-size: 2rem;
-      margin-bottom: 8px;
-      letter-spacing: 0.2px;
-    }
-    .hero-sub {
+      font-weight: 700;
       font-size: 1rem;
-      color: #3d4655;
-      line-height: 1.55;
-      margin: 0 0 14px 0;
+      transition: color 0.2s ease;
     }
+    nav a:hover { color: var(--primary-blue); }
 
+    /* --- Universal Section Styling --- */
+    section { padding: 60px 20px; }
+    .section-light { background-color: var(--bg-light); }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .text-center { text-center; }
+
+    /* --- Hero Section --- */
+    .hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+    .kicker {
+      color: var(--brand-red);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--text-main);
+    }
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    
     .pill-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0 2px 0;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
     }
     .pill {
-      display: inline-block;
-      background: #eef4ff;
-      border: 1px solid #d7e5ff;
-      color: #1f3a6b;
-      padding: 6px 10px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: var(--primary-blue-hover);
+      padding: 6px 16px;
       border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 11px 18px;
-      border-radius: 6px;
-      border: none;
-      background: #0072ff;
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.95rem;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .btn:hover { background: #0059c4; }
-    .btn-secondary {
-      background: #e9eef9;
-      color: #12305f;
-      border: 1px solid #d7def0;
-    }
-    .btn-secondary:hover { background: #dde6fb; }
-
-    ul { padding-left: 20px; margin: 10px 0 0 0; }
-    li { margin: 6px 0; line-height: 1.45; }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-    @media (max-width: 720px) {
-      .grid-2 { grid-template-columns: 1fr; }
-    }
-
-    .kicker {
-      color: #2c3e50;
-      font-weight: 800;
       font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 6px;
+      font-weight: 600;
     }
-    .muted { color: #4b5563; line-height: 1.5; margin: 0; }
-
-    .info-line {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 10px;
-      border-bottom: 1px solid #e6ebf7;
-      font-size: 0.92rem;
-    }
-    .info-line:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-    .info-key { color: #334155; font-weight: 700; }
-    .info-val { color: #111827; font-weight: 600; text-align: right; }
-
-    .media {
-      width: 100%;
-      max-width: 2rem;
+    .pill.pill-alert {
+      background: #fef2f2;
+      border-color: #fecaca;
+      color: var(--brand-red);
     }
 
+    /* --- Booking Section --- */
+    .booking-wrapper {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      margin-top: -20px;
+    }
     .disclaimer {
       font-size: 0.85rem;
-      color: #555;
-      line-height: 1.55;
+      color: var(--text-muted);
+      background: var(--bg-light);
+      border-left: 4px solid var(--brand-red);
+      padding: 12px 16px;
+      margin-top: 20px;
+      border-radius: 0 8px 8px 0;
     }
 
-    footer {
+    /* --- Services Grid --- */
+    .section-title {
+      font-size: 2rem;
       text-align: center;
-      font-size: 0.8rem;
-      color: #555;
-      padding: 15px;
+      margin-bottom: 40px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      border-radius: 8px;
+    }
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: var(--primary-blue);
+    }
+    .service-list {
+      list-style: none;
+    }
+    .service-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .service-list li:last-child { border-bottom: none; }
+    .service-name { font-weight: 600; }
+    .service-price { color: var(--text-muted); font-weight: 500; }
+
+    /* --- How it Works --- */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .step {
+      text-align: center;
+    }
+    .step-number {
+      background: var(--primary-blue);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0 auto 16px;
+    }
+    .step h4 { margin-bottom: 8px; font-size: 1.1rem; }
+    .step p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* --- Footer --- */
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 15px;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .social-icon:hover { opacity: 1; }
+
+    @media (max-width: 768px) {
+      .booking-wrapper { padding: 20px; }
+      section { padding: 40px 15px; }
     }
   </style>
 </head>
 
 <body>
-<header>
+
+<div class="top-bar">
   <a href="index.html">
     <img class="brandmark" src="nibletts-garage-high-resolution-logo-transparent.png" alt="Niblett's Garage main logo">
   </a>
-</header>
+</div>
 
 <nav>
   <a href="index.html">Mobile Services</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-<div class="container">
+<main>
+  <section class="hero section-light">
+    <div class="container">
+      <span class="kicker">Mobile Automotive Service</span>
+      <h1>We Bring The Shop To You</h1>
+      <p>Serving the <strong>Chippewa Valley</strong> with professional on-site maintenance and repair. Skip the waiting room—get straightforward service and quality parts right in your own driveway.</p>
+      
+      <div class="pill-row">
+        <span class="pill">At-home convenience</span>
+        <span class="pill">Quality workmanship</span>
+        <span class="pill">Zero-trace cleanup</span>
+      </div>
+      <div class="pill-row">
+        <span class="pill pill-alert">📍 Chippewa Valley, WI</span>
+        <span class="pill pill-alert">⏱️ 48h Minimum Notice</span>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <div class="hero">
-      <div class="hero-full">
-        <div class="kicker">Mobile Automotive Service</div>
-        <h1 class="hero-title">We Bring The Shop To You</h1>
-        <p class="hero-sub">
-          Serving the <strong>Chippewa Valley</strong> with professional on-site maintenance and repair. Skip the waiting room—get straightforward service and quality parts right in your own driveway.
-        </p>
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="booking-wrapper">
+        <h2 style="text-align: center; margin-bottom: 30px;">Book an Appointment</h2>
+        
+        <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script>
+        
+        <div class="disclaimer">
+          <strong>CRITICAL BOOKING REQUIREMENT:</strong> You must include your Vehicle Year, Make, Model, Trim, Engine, OR VIN, AND the service location in the 'Appointment Notes' field or your request will be automatically declined. Final cost may vary based on vehicle condition (rust, seized hardware, etc). Must be parked on a flat, solid surface.
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="pill-row">
-          <span class="pill">At-home convenience</span>
-          <span class="pill">Quality workmanship</span>
-          <span class="pill">Honest recommendations</span>
-          <span class="pill">Zero-trace cleanup</span>
+  <section class="section-light">
+    <div class="container">
+      <h2 class="section-title">Common Mobile Services</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-top: -30px; margin-bottom: 40px;">All standard pricing includes the cost of parts.</p>
+      
+      <div class="grid-3">
+        <div class="service-card">
+          <h3>Fluids & Filters</h3>
+          <ul class="service-list">
+            <li><span class="service-name">Full Synthetic Oil Change</span> <span class="service-price">$100 - $140</span></li>
+            <li><span class="service-name">Vehicle Care Package</span> <span class="service-price">$190 - $240</span></li>
+          </ul>
         </div>
         
-        <div class="pill-row" style="margin-top: 10px;">
-          <span class="pill" style="background: #fff; border: 1px solid #002b5b;">📍 Chippewa Valley, WI</span>
-          <span class="pill" style="background: #fff; border: 1px solid #002b5b;">⏱️ 48h Minimum Notice</span>
+        <div class="service-card">
+          <h3>Wheels & Batteries</h3>
+          <ul class="service-list">
+            <li><span class="service-name">Tire Rotation</span> <span class="service-price">$80</span></li>
+            <li><span class="service-name">Battery Replacement</span> <span class="service-price">$240 - $300</span></li>
+          </ul>
         </div>
 
-        <br>
-        <div class="kicker">Appointment Booker</div>
-        <div class="btn-row">
-          <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script>
+        <div class="service-card">
+          <h3>General Maintenance</h3>
+          <ul class="service-list">
+            <li><span class="service-name">Wiper Blade Replacement</span> <span class="service-price">$80 - $100</span></li>
+            <li><span class="service-name">Custom Diagnostic/Repair</span> <span class="service-price">By Quote</span></li>
+          </ul>
         </div>
-
-        <p class="disclaimer" style="margin-top:12px;">
-          <strong>BOOKING REQUIREMENT:</strong> You must include your Vehicle Year, Make, Model, Trim, Engine, OR VIN, AND the service location in the 'Appointment Notes' field or your request will be declined.
-          *Final cost may vary based on vehicle condition (rust, seized hardware, or previous damage). See booking site for full policy.
-        </p>
-      </div>
-
-      <div class="hero-right">
-        <h3 style="margin:0 0 10px 0;">Mobile Details</h3>
-        <div class="info-line">
-          <span class="info-key">Area</span>
-          <span class="info-val">Chippewa Valley, WI</span>
-        </div>
-        <div class="info-line">
-          <span class="info-key">Service</span>
-          <span class="info-val">On-Site / Driveway</span>
-        </div>
-        <div class="info-line">
-          <span class="info-key">Notice</span>
-          <span class="info-val">48h Minimum</span>
-        </div>
-        <div class="info-line">
-          <span class="info-key">Location</span>
-          <span class="info-val">Flat/Solid Surface</span>
-        </div>
-        <p class="disclaimer" style="margin-top:10px;">
-          Mobile service ensures convenience and dedicated focus on your vehicle without the overhead of a traditional shop.
-        </p>
       </div>
     </div>
-  </div>
- 
-  <div class="card">
-    <h2>Mobile Services</h2>
-    <div class="grid-2">
-      <div>
-        <h3 style="margin-bottom:6px;">All Prices Include The Cost of Parts</h3>
-        <ul>
-          <li><strong>Full Synthetic Oil Change:</strong> $100 - $140</li>
-          <li><strong>Tire Rotation</strong> $80</li>
-          <li><strong>Battery Replacement:</strong> $240 - $300</li>
-          <li><strong>Vehicle Care Package:</strong> $190 - $240</li>
-          <li><strong>Wiper Blade Replacement:</strong> $80 - $100</li>
-        </ul>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">How Mobile Service Works</h2>
+      
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Select Service</h4>
+          <p>Choose your needed maintenance or request a custom quote.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>Provide Details</h4>
+          <p>Give us your exact vehicle specs and the location of the vehicle.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Review & Approve</h4>
+          <p>We verify parts availability and confirm your time slot.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h4>Driveway Service</h4>
+          <p>We arrive on schedule and complete the work on a flat, solid surface.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="card">
-    <h2>How Mobile Booking Works</h2>
-    <ol style="margin: 8px 0 0 18px; line-height: 1.55;">
-      <li><strong>Select a service:</strong> Choose your needed maintenance or repair above.</li>
-      <li><strong>Provide Vehicle Info & Address:</strong> Add these to the notes to ensure we bring the right parts.</li>
-      <li><strong>Review & Approval:</strong> We review the request and confirm your time slot.</li>
-      <li><strong>Driveway Service:</strong> We arrive at the scheduled time and perform the work on-site.</li>
-    </ol>
-  </div>
-  
-<div class="card">
-  <h2>Follow Us On Social Media!</h2>
-  <a href="https://www.facebook.com/profile.php?id=61586049606841"><img class="media" src="Facebook_Logo_Primary.png"></a>
-</div>
-  
-  <div class="card" style="font-size:0.85rem; color:#555;">
-    <h3>Disclaimer</h3>
-    <p style="margin:0; line-height:1.55;">
-      Submitting a request does not guarantee a service appointment. Vehicle must be parked on a flat, solid surface. Pricing and scheduling depend on parts availability and travel distance.
-  </div>
-
-</div>
+</main>
 
 <footer>
-  &copy; <span id="year"></span> Niblett's Garage LLC. All rights reserved.
+  <a href="https://www.facebook.com/profile.php?id=61586049606841" target="_blank">
+    <img class="social-icon" src="Facebook_Logo_Primary.png" alt="Facebook">
+  </a>
+  <p>&copy; <span id="year"></span> Niblett's Garage LLC. All rights reserved.</p>
 </footer>
 
 <script>
