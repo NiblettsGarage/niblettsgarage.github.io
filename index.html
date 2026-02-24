@@ -27,13 +27,6 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html, body {
-      height: 100%;
-      width: 100vw;
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text-main);
@@ -46,12 +39,15 @@
 
     main {
       flex: 1 0 auto;
-      display: flex;
-      flex-direction: column;
     }
 
     footer {
       flex-shrink: 0;
+      background-color: var(--darker-bg);
+      color: #9ca3af;
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #374151;
     }
 
     section {
@@ -154,24 +150,15 @@
     .booking-container {
       max-width: 1300px; 
       margin: 0 auto;
-      padding: 40px 0;
-      flex: 1; /* Allows it to expand within main */
+      padding: 20px 0 60px 0;
     }
     .disclaimer-box {
       background: var(--light-bg);
       border-left: 6px solid var(--brand-red);
       padding: 20px;
-      margin-top: 30px;
-      font-size: 0.95rem;
+      margin-bottom: 30px; /* Pushes the Square widget down */
+      font-size: 1.05rem;
       color: var(--text-main);
-    }
-
-    footer {
-      background-color: var(--darker-bg);
-      color: #9ca3af;
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid #374151;
     }
 
     @media (max-width: 768px) {
@@ -212,15 +199,17 @@
     </div>
   </section>
 
-  <section style="flex: 1; display: flex; flex-direction: column;">
-    <div class="booking-container" style="width: 100%;">
-      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase;">Book an Appointment</h2>
-      
-      <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script>
+  <section>
+    <div class="booking-container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 30px; text-transform: uppercase;">Book an Appointment</h2>
       
       <div class="disclaimer-box">
-        <strong>CRITICAL BOOKING REQUIREMENT:</strong> You must include your Vehicle Year, Make, Model, Trim, Engine, OR VIN, <strong>AND the service location</strong> in the 'Appointment Notes' field or your request will be automatically declined. Final cost may vary based on vehicle condition (rust, seized hardware, etc). Vehicle must be parked on a flat, solid surface.
+        <strong>PRICING NOTICE:</strong> Unless otherwise specified, all prices listed below are for <strong>LABOR ONLY</strong>. We will contact you prior to your appointment with a full quote that includes the specific parts required for your vehicle.<br><br>
+        <strong>CRITICAL BOOKING REQUIREMENT:</strong> You must include your Vehicle Year, Make, Model, Trim, Engine, OR VIN, <strong>AND the service location</strong> in the 'Appointment Notes' field or your request will be automatically declined. Vehicle must be parked on a flat, solid surface.
       </div>
+
+      <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script>
+      
     </div>
   </section>
 </main>
