@@ -14,13 +14,15 @@
 
   <style>
     :root {
-      --primary-blue: #0072ff;
-      --primary-blue-hover: #0059c4;
       --brand-red: #c8102e;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --bg-light: #f8fafc;
-      --border-color: #e2e8f0;
+      --brand-red-dark: #a00d25;
+      --dark-bg: #111827;
+      --darker-bg: #030712;
+      --light-bg: #f3f4f6;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --white: #ffffff;
+      --border: #e5e7eb;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,174 +30,176 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text-main);
-      background-color: #ffffff;
+      background-color: var(--white);
       line-height: 1.6;
     }
 
-    /* --- Navigation & Header --- */
-    .top-bar {
-      background: var(--bg-light);
-      border-bottom: 1px solid var(--border-color);
+    section {
+      width: 100%;
+      padding: 80px 20px;
+    }
+    .section-light { background-color: var(--light-bg); }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      background-color: var(--darker-bg);
+      padding: 20px;
       text-align: center;
-      padding: 20px 15px 15px;
+      border-bottom: 4px solid var(--brand-red);
     }
     .brandmark {
-      max-width: 320px;
+      max-width: 350px;
       width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
     }
     nav {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border-color);
+      background-color: var(--dark-bg);
       display: flex;
       justify-content: center;
-      padding: 12px 20px;
-      gap: 30px;
+      padding: 15px 20px;
+      gap: 40px;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
     nav a {
-      color: var(--text-main);
+      color: var(--white);
       text-decoration: none;
       font-weight: 700;
-      font-size: 1rem;
-      transition: color 0.2s ease;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s;
     }
-    nav a:hover { color: var(--primary-blue); }
+    nav a:hover { color: var(--brand-red); }
 
-    /* --- Section Styling --- */
-    section { padding: 60px 20px; }
-    .section-light { background-color: var(--bg-light); }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    /* --- Header Area --- */
+    /* --- Page Headers --- */
     .page-header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
     .kicker {
       color: var(--brand-red);
-      font-weight: 800;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.9rem;
+      letter-spacing: 2px;
       margin-bottom: 10px;
       display: block;
     }
     .page-header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-    .page-header p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
     }
 
-    /* --- Content Grid --- */
+    /* --- Contact Layout --- */
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 40px;
     }
-
-    .contact-card {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    
+    .contact-panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
-    .contact-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      color: var(--text-main);
-      border-bottom: 2px solid var(--bg-light);
+    .contact-panel-dark {
+      background: var(--dark-bg);
+      color: var(--white);
+      border: none;
+    }
+    .contact-panel h3 {
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border);
       padding-bottom: 10px;
     }
-    
+    .contact-panel-dark h3 {
+      border-bottom-color: #374151;
+      color: var(--brand-red);
+    }
+
     .info-line {
       display: flex;
       justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--bg-light);
+      padding: 15px 0;
+      border-bottom: 1px solid var(--light-bg);
+      font-size: 1.05rem;
     }
+    .contact-panel-dark .info-line { border-bottom-color: #1f2937; }
     .info-line:last-child { border-bottom: none; }
-    .info-key { font-weight: 700; color: var(--text-muted); }
+    .info-key { font-weight: 700; }
     .info-val { font-weight: 600; text-align: right; }
 
     .checklist {
       list-style: none;
+      margin-top: 20px;
     }
     .checklist li {
       position: relative;
-      padding-left: 24px;
-      margin-bottom: 12px;
-      color: var(--text-muted);
+      padding-left: 28px;
+      margin-bottom: 15px;
+      font-size: 1.05rem;
     }
     .checklist li::before {
-      content: "→";
+      content: "■";
       position: absolute;
       left: 0;
-      color: var(--primary-blue);
-      font-weight: bold;
+      color: var(--brand-red);
+      font-size: 0.8rem;
+      top: 4px;
     }
 
-    /* --- Call to Action Box --- */
-    .cta-box {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 12px;
-      padding: 30px;
-      text-align: center;
-      margin-top: 40px;
-    }
-    .cta-box h3 { margin-bottom: 15px; color: var(--primary-blue-hover); }
     .btn {
-      display: inline-block;
-      background: var(--primary-blue);
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 6px;
+      display: block;
+      text-align: center;
+      background: var(--brand-red);
+      color: var(--white);
+      padding: 16px 30px;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 30px;
       transition: background 0.2s;
     }
-    .btn:hover { background: var(--primary-blue-hover); }
+    .btn:hover { background: var(--brand-red-dark); }
 
-    /* --- Footer --- */
     footer {
-      background: #111827;
+      background-color: var(--darker-bg);
       color: #9ca3af;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      margin-top: 40px;
+      padding: 40px 20px;
+      border-top: 1px solid #374151;
     }
 
     @media (max-width: 768px) {
       section { padding: 40px 15px; }
-      .contact-grid { gap: 20px; }
+      .contact-panel { padding: 25px; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="top-bar">
+<header>
   <a href="index.html">
     <img class="brandmark" src="nibletts-garage-high-resolution-logo-transparent.png" alt="Niblett's Garage main logo">
   </a>
-</div>
+</header>
 
 <nav>
   <a href="index.html">Mobile Services</a>
@@ -203,47 +207,45 @@
 </nav>
 
 <main>
-  <section>
+  <section class="section-light">
     <div class="container">
       
       <div class="page-header">
         <span class="kicker">Contact</span>
         <h1>Get in Touch</h1>
-        <p>We operate as a <strong>fully mobile</strong> service. Booking online is the fastest way to secure your appointment for standard maintenance.</p>
+        <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">
+          We operate as a <strong>fully mobile</strong> service. Booking online is the fastest way to secure your appointment for standard maintenance.
+        </p>
       </div>
 
       <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Contact Info</h3>
+        <div class="contact-panel contact-panel-dark">
+          <h3>Direct Contact</h3>
           <div class="info-line">
-            <span class="info-key">Service Area</span>
+            <span class="info-key" style="color: #9ca3af;">Service Area</span>
             <span class="info-val">Chippewa Valley, WI</span>
           </div>
           <div class="info-line">
-            <span class="info-key">Phone / Text</span>
+            <span class="info-key" style="color: #9ca3af;">Phone / Text</span>
             <span class="info-val">(715) 390-0519</span>
           </div>
           <div class="info-line">
-            <span class="info-key">Email</span>
+            <span class="info-key" style="color: #9ca3af;">Email</span>
             <span class="info-val">NiblettsGarage@outlook.com</span>
           </div>
+
+          <a href="index.html" class="btn">Book Standard Service Online</a>
         </div>
 
-        <div class="contact-card">
-          <h3>Texting for a Custom Quote?</h3>
-          <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--text-muted);">If you need work not listed on our booking site, text or email us with the following:</p>
+        <div class="contact-panel">
+          <h3>Custom Repair Quotes</h3>
+          <p style="color: var(--text-muted);">If you need a diagnosis or repair not listed on our booking site, text or email us with the exact details below:</p>
           <ul class="checklist">
-            <li><strong>Full Vehicle Specs:</strong> Year, Make, Model, Engine</li>
-            <li><strong>Service Location:</strong> The exact address where the work will happen</li>
-            <li><strong>Symptoms:</strong> Any noises, leaks, warning lights, or codes</li>
+            <li><strong>Full Vehicle Specs:</strong> Year, Make, Model, Engine. Do not guess.</li>
+            <li><strong>Service Location:</strong> The exact address where the work will happen.</li>
+            <li><strong>Symptoms:</strong> The specific noises, leaks, warning lights, or codes you are dealing with.</li>
           </ul>
         </div>
-      </div>
-
-      <div class="cta-box">
-        <h3>Ready for standard maintenance?</h3>
-        <p style="margin-bottom: 20px; color: var(--text-muted);">Skip the text and lock in your time directly through our online system.</p>
-        <a href="index.html" class="btn">Book Service Online</a>
       </div>
 
     </div>
