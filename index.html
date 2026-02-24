@@ -27,11 +27,29 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* Flexbox Sticky Footer Setup & Nuke Side Gaps */
+    html, body {
+      height: 100%;
+      width: 100vw;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text-main);
       background-color: var(--white);
       line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto; /* This forces the main section to push the footer down */
+    }
+
+    footer {
+      flex-shrink: 0;
     }
 
     /* --- Full-Bleed Sections --- */
@@ -47,7 +65,6 @@
       background-color: var(--light-bg);
     }
     
-    /* Center container bounds the content so it doesn't stretch infinitely */
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -130,7 +147,7 @@
       border: 2px solid var(--border);
       color: var(--text-main);
       padding: 8px 20px;
-      border-radius: 4px; /* Squared off, more industrial */
+      border-radius: 4px;
       font-size: 0.95rem;
       font-weight: 700;
     }
@@ -142,7 +159,7 @@
 
     /* --- Booking Area --- */
     .booking-container {
-      max-width: 1000px;
+      max-width: 1300px; /* Widened to give Square max room */
       margin: 0 auto;
       padding: 40px 0;
     }
@@ -249,15 +266,13 @@
   </section>
 
   <section>
-    <div class="container">
-      <div class="booking-container">
-        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase;">Book an Appointment</h2>
-        
-        <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script>
-        
-        <div class="disclaimer-box">
-          <strong>CRITICAL BOOKING REQUIREMENT:</strong> You must include your Vehicle Year, Make, Model, Trim, Engine, OR VIN, <strong>AND the service location</strong> in the 'Appointment Notes' field or your request will be automatically declined. Final cost may vary based on vehicle condition (rust, seized hardware, etc). Vehicle must be parked on a flat, solid surface.
-        </div>
+    <div class="booking-container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase;">Book an Appointment</h2>
+      
+      <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script>
+      
+      <div class="disclaimer-box">
+        <strong>CRITICAL BOOKING REQUIREMENT:</strong> You must include your Vehicle Year, Make, Model, Trim, Engine, OR VIN, <strong>AND the service location</strong> in the 'Appointment Notes' field or your request will be automatically declined. Final cost may vary based on vehicle condition (rust, seized hardware, etc). Vehicle must be parked on a flat, solid surface.
       </div>
     </div>
   </section>
