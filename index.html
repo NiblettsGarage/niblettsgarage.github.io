@@ -218,6 +218,23 @@
       color: var(--text-main);
       letter-spacing: 1px;
     }
+    .footer-social {
+      margin-top: 15px;
+      display: block;
+    }
+    .footer-social a {
+      color: #9ca3af;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-social a:hover {
+      color: var(--brand-red);
+    }
   </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -307,6 +324,11 @@
 
 <footer>
   <p>&copy; <span id="year"></span> Niblett's Garage LLC. All rights reserved. Fully insured.</p>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61586049606841" target="_blank" rel="noopener noreferrer">
+      Find us on Facebook
+    </a>
+  </div>
 </footer>
 
 <script>
