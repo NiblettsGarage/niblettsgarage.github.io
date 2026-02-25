@@ -58,7 +58,7 @@
     }
     
     .container {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
@@ -118,8 +118,9 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 30px;
+      margin-bottom: 40px;
     }
     
     .contact-panel {
@@ -128,15 +129,15 @@
       border-top: 5px solid var(--brand-red);
       padding: 40px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
     }
 
     .contact-panel h3 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 25px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      border-bottom: 1px solid var(--light-bg);
+      padding-bottom: 10px;
     }
 
     .info-line {
@@ -144,57 +145,29 @@
       justify-content: space-between;
       padding: 12px 0;
       border-bottom: 1px solid var(--light-bg);
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
     .info-line:last-child { border-bottom: none; }
     .info-key { font-weight: 600; color: var(--text-muted); }
     .info-val { font-weight: 700; text-align: right; }
 
-    .checklist {
-      list-style: none;
-      margin: 15px 0 25px 0;
-    }
-    .checklist li {
-      position: relative;
-      padding-left: 28px;
-      margin-bottom: 12px;
-      font-size: 1rem;
-    }
-    .checklist li::before {
-      content: "■";
-      position: absolute;
-      left: 0;
-      color: var(--brand-red);
-      font-size: 0.8rem;
-      top: 4px;
-    }
-
-    .btn {
-      display: block;
+    .btn-container {
       text-align: center;
+    }
+    .btn {
+      display: inline-block;
       background: var(--brand-red);
       color: var(--white);
-      padding: 16px 20px;
+      padding: 18px 40px;
       text-decoration: none;
       font-weight: 800;
-      font-size: 1rem;
+      font-size: 1.1rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-top: auto;
       transition: background 0.2s;
     }
     .btn:hover { background: var(--brand-red-dark); }
     
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--brand-red);
-      color: var(--brand-red);
-    }
-    .btn-outline:hover {
-      background: var(--brand-red);
-      color: var(--white);
-    }
-
     .footer-social {
       margin-top: 15px;
       display: block;
@@ -213,17 +186,10 @@
     @media (max-width: 768px) {
       main > section { padding: 40px 15px; }
       .contact-panel { padding: 25px; }
+      .info-val { font-size: 0.95rem; }
     }
   </style>
 </head>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YYY6WSQ53J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YYY6WSQ53J');
-</script>
 
 <body>
 
@@ -243,10 +209,10 @@
     <div class="container">
       
       <div class="page-header">
-        <span class="kicker">Contact</span>
-        <h1>Get in Touch</h1>
+        <span class="kicker">Get in Touch</span>
+        <h1>Contact & Hours</h1>
         <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">
-          We operate as a <strong>fully mobile</strong> service. Booking online is the fastest way to secure an appointment for maintenance or repair in the Chippewa Valley.
+          Operating as a <strong>fully mobile</strong> service in the Chippewa Valley. For the fastest response, please book your appointment through our online tool.
         </p>
       </div>
 
@@ -265,24 +231,27 @@
             <span class="info-key">Email</span>
             <span class="info-val"><a href="mailto:NiblettsGarage@outlook.com" style="color: inherit; text-decoration: none;">NiblettsGarage@outlook.com</a></span>
           </div>
-          
-          <p style="font-size: 0.95rem; color: var(--text-muted); margin: 25px 0;">For routine maintenance like oil changes or brake service, use our direct booking tool.</p>
-          
-          <a href="index.html" class="btn">Book Maintenance Online</a>
         </div>
 
         <div class="contact-panel">
-          <h3>Custom Repair Quotes</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">For diagnosis or repairs not listed in our standard menu, please book a <strong>'General Inquiry'</strong> and include the following details in the Appointment Notes:</p>
-          
-          <ul class="checklist">
-            <li><strong>Vehicle Specs:</strong> Year, Make, Model, Engine.</li>
-            <li><strong>Service Location:</strong> Where the work will happen.</li>
-            <li><strong>Symptoms:</strong> Specific noises, leaks, or warning lights.</li>
-          </ul>
-
-          <a href="index.html" class="btn btn-outline">Book Custom Service</a>
+          <h3>Business Hours</h3>
+          <div class="info-line">
+            <span class="info-key">Mon, Tue, Thu, Fri</span>
+            <span class="info-val">8:00 AM – 10:00 PM</span>
+          </div>
+          <div class="info-line">
+            <span class="info-key">Wednesday</span>
+            <span class="info-val">8:00 AM – 6:00 PM</span>
+          </div>
+          <div class="info-line">
+            <span class="info-key">Sat & Sun</span>
+            <span class="info-val">Closed</span>
+          </div>
         </div>
+      </div>
+
+      <div class="btn-container">
+        <a href="index.html" class="btn">View Services & Book Online</a>
       </div>
 
     </div>
