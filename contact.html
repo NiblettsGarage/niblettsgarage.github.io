@@ -75,27 +75,11 @@
       display: block;
       margin: 0 auto;
     }
-    nav {
-      background-color: var(--dark-bg);
-      display: flex;
-      justify-content: center;
-      padding: 15px 20px;
-      gap: 40px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.05rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: color 0.2s;
-    }
+    nav { background-color: var(--dark-bg); display: flex; justify-content: center; align-items: center; padding: 15px 20px; gap: 30px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+    nav a { color: var(--white); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
     nav a:hover { color: var(--brand-red); }
+    nav a.active-link { background: var(--brand-red); color: var(--white); padding: 8px 15px; border-radius: 4px; }
+    nav a.active-link:hover { background: var(--brand-red-dark); }
 
     .page-header {
       text-align: center;
