@@ -221,12 +221,18 @@ section {
 }
 
 .booking-footer-note {
+  display: block;
   text-align: center;
-  margin-top: 30px;
-  font-size: 0.95rem;
+  margin: 40px auto 0; /* 40px gap on top, centered, 0 on bottom */
+  max-width: 800px;
+  font-size: 1rem;
   color: var(--text-muted);
-  font-style: italic;
-  width: 100%;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+strong {
+  color: var(--brand-red); /* Makes 'non-obligation' pop in your brand color */
 }
 
 /* --- Footer & Facebook Pop --- */
