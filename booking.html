@@ -26,9 +26,11 @@
     header { background-color: var(--darker-bg); padding: 20px; text-align: center; border-bottom: 4px solid var(--brand-red); }
     .brandmark { max-width: 300px; width: 100%; display: block; margin: 0 auto; }
     
-    nav { background-color: var(--dark-bg); display: flex; justify-content: center; padding: 15px 20px; gap: 30px; position: sticky; top: 0; z-index: 100; }
-    nav a { color: var(--white); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+    nav { background-color: var(--dark-bg); display: flex; justify-content: center; align-items: center; padding: 15px 20px; gap: 30px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+    nav a { color: var(--white); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
     nav a:hover { color: var(--brand-red); }
+    nav a.active-link { background: var(--brand-red); color: var(--white); padding: 8px 15px; border-radius: 4px; }
+    nav a.active-link:hover { background: var(--brand-red-dark); }
 
     .booking-wrapper { max-width: 1000px; margin: 40px auto; padding: 20px; }
     
@@ -54,7 +56,7 @@
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="booking.html" style="color: var(--brand-red);">Book Now</a>
+  <a href="booking.html" class="active-link">Book Now</a>
   <a href="contact.html">Contact</a>
 </nav>
 
