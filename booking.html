@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <title>Book Online - Niblett's Garage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Use the same :root and base styles as index.html */
+    :root {
+      --brand-red: #c8102e;
+      --brand-red-dark: #a00d25;
+      --dark-bg: #111827;
+      --darker-bg: #030712;
+      --light-bg: #f3f4f6;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --white: #ffffff;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: var(--light-bg); color: var(--text-main); }
+    
+    header { background-color: var(--darker-bg); padding: 20px; text-align: center; border-bottom: 4px solid var(--brand-red); }
+    .brandmark { max-width: 300px; width: 100%; display: block; margin: 0 auto; }
+    
+    nav { background-color: var(--dark-bg); display: flex; justify-content: center; padding: 15px 20px; gap: 30px; position: sticky; top: 0; z-index: 100; }
+    nav a { color: var(--white); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+    nav a:hover { color: var(--brand-red); }
+
+    .booking-wrapper { max-width: 1000px; margin: 40px auto; padding: 20px; }
+    
+    .disclaimer-box {
+      background: var(--white);
+      border-left: 6px solid var(--brand-red);
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    .disclaimer-box h2 { text-transform: uppercase; font-size: 1.2rem; margin-bottom: 15px; color: var(--brand-red); }
+
+    footer { background-color: var(--darker-bg); color: #9ca3af; text-align: center; padding: 40px 20px; margin-top: 60px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html">
+    <img class="brandmark" src="nibletts-garage-high-resolution-logo-transparent.png" alt="Niblett's Garage logo">
+  </a>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="booking.html" style="color: var(--brand-red);">Book Now</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="booking-wrapper">
+  <div class="disclaimer-box">
+    <h2>Booking Requirements</h2>
+    <p><strong>1. VEHICLE DATA:</strong> You must include your <strong>Year, Make, Model, and Engine</strong> in the 'Appointment Notes' or the request will be declined.</p>
+    <br>
+    <p><strong>2. PRICING:</strong> Prices listed are for <strong>LABOR ONLY</strong>. We will contact you with a separate quote for parts once your appointment is requested.</p>
+    <br>
+    <p><strong>3. LOCATION:</strong> Vehicle must be parked on a flat, solid surface (concrete or asphalt preferred).</p>
+  </div>
+
+  <script src='https://app.squareup.com/appointments/buyer/widget/xzyhfv8zkfvdzb/LG9RD3PC1AKS1.js'></script>
+</div>
+
+<footer>
+  <p>&copy; Niblett's Garage LLC. Fully Insured Mobile Service.</p>
+</footer>
+
+</body>
+</html>
