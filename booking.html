@@ -74,8 +74,9 @@
 </div>
 
 <footer>
-  <p>&copy; Niblett's Garage LLC. Fully Insured Mobile Service.</p>
+  <p>&copy; <span id="year"></span> Niblett's Garage LLC. All rights reserved. Fully insured.</p>
 </footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
